@@ -42,11 +42,22 @@ def story_fighter_start(name):
     elif choice == '3':
         return 'fighter_try_to_ignore_the_man'
     else:
-        print("Invalid choice. Please choose 1, 2, or 3.")
+        print('Invalid choice. Please choose 1, 2, or 3.')
         return 'fighter_start'
 
 def story_fighter_help_poor_man(name):
-    return None
+    print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there." \nThe man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon. \nThe plant is so tall that you can’t see the end of it, being hidden in between the clouds. \n"Please, I’m too poor and weak to do anything about it. Can you go and save her?"')
+    print('What would you like to do?')
+    print('1. Accept the quest and go towards the giant beanstalk.')
+    print('2. Too dangerous. Walk away.')
+    choice = input('Enter the number of your choice: ')
+    if choice == '1':
+        return 'fighter_accept_quest'
+    elif choice == '2':
+        return 'fighter_walk_away'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'fighter_help_poor_man'
 
 def story_fighter_ask_first(name):
     return None
@@ -54,11 +65,19 @@ def story_fighter_ask_first(name):
 def story_fighter_try_to_ignore_the_man(name):
     return None
 
+def story_fighter_accept_quest(name):
+    return None
+
+def story_fighter_walk_away(name):
+    return None
+
 story_segments = {
     'fighter_start': story_fighter_start,
     'fighter_help_poor_man': story_fighter_help_poor_man,
     'fighter_ask_first': story_fighter_ask_first,
-    'fighter_try_to_ignore_the_man': story_fighter_try_to_ignore_the_man
+    'fighter_try_to_ignore_the_man': story_fighter_try_to_ignore_the_man,
+    'fighter_accept_quest': story_fighter_accept_quest,
+    'fighter_walk_away': story_fighter_walk_away
 
 }
 
