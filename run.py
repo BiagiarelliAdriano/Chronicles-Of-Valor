@@ -91,9 +91,26 @@ def story_fighter_try_to_ignore_the_man(name):
     return None
 
 def story_fighter_accept_quest(name):
-    return None
+    print('You accept the quest of the poor man and assure them you will recover their daughter. You start your journey towards the giant beanstalk.')
+    print('It is not that far, so it just takes you about half a day to get at the base of it. Looking up towards the sky, it looks like it will be a very long climb.')
+    print('What would you like to do?')
+    print('1. Rest and wait for the day after.')
+    print('2. Climb the giant beanstalk right away.')
+    choice = input('Enter the number of your choice: ')
+    if choice == '1':
+        return 'fighter_rest_and_wait'
+    elif choice == '2':
+        return 'fighter_climb_right_away'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'fighter_accept_quest'
 
 def story_fighter_walk_away(name):
+
+def story_fighter_rest_and_wait(name):
+    return None
+
+def story_fighter_climb_right_away(name):
     return None
 
 story_segments = {
@@ -103,6 +120,8 @@ story_segments = {
     'fighter_try_to_ignore_the_man': story_fighter_try_to_ignore_the_man,
     'fighter_accept_quest': story_fighter_accept_quest,
     'fighter_walk_away': story_fighter_walk_away,
+    'fighter_rest_and_wait': story_fighter_rest_and_wait,
+    'fighter_climb_right_away': story_fighter_climb_right_away
 
 }
 
