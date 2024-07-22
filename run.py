@@ -112,9 +112,31 @@ def story_fighter_walk_away(name):
     return None
 
 def story_fighter_rest_and_wait(name):
-    return None
+    print('You decide you are too tired to start the climb right now. You build a small campfire and set up your travelling tent.')
+    print('The night is uneventful and you take a good night sleep. The following morning, you are full of energy and ready to take on the climb.')
+    print('You start going up, easily inserting your fingers in the plant to grab on to and climb. After a while, you reach the clouds.')
+    print('It gets harder to climb while you cannot see all around you, but you manage to continue on. Finally, the clouds clear up and you get to the end of the beanstalk.')
+    print('You get up to a giant platform built in what appears to be smooth stone. You can now see two sets of stone stairs that go even above the clouds.')
+    print('One has steps of your size, the other has giant steps.')
+    print('What would you like to do?')
+    print('1. Take the stairs of your size.')
+    print('2. Take the giant stairs.')
+    choice = input('Enter the number of your choice')
+    if choice == '1':
+        return 'fighter_climb_normal_stairs'
+    elif choice == '2':
+        return 'fighter_climb_giant_stairs'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'fighter_rest_and_wait'
 
 def story_fighter_climb_right_away(name):
+    return None
+
+def story_fighter_climb_normal_stairs(name):
+    return None
+
+def story_fighter_climb_giant_stairs(name):
     return None
 
 story_segments = {
@@ -125,7 +147,9 @@ story_segments = {
     'fighter_accept_quest': story_fighter_accept_quest,
     'fighter_walk_away': story_fighter_walk_away,
     'fighter_rest_and_wait': story_fighter_rest_and_wait,
-    'fighter_climb_right_away': story_fighter_climb_right_away
+    'fighter_climb_right_away': story_fighter_climb_right_away,
+    'fighter_climb_normal_stairs': story_fighter_climb_normal_stairs,
+    'fighter_climb_giant_stairs': story_fighter_climb_giant_stairs
 
 }
 
