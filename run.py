@@ -1,12 +1,14 @@
 def introduction():
     print('Welcome to the Chronicles of Valor!')
-    print('Chronicles of Valor is a text based adventure game where YOU decide your destiny! \nYou will venture forth into Cydoia, a flourishing continent with all kinds of adventures waiting for you.')
+    print('Chronicles of Valor is a text based adventure game where YOU decide your destiny!')
+    print('You will venture forth into Cydoia, a flourishing continent with all kinds of adventures waiting for you.')
     name = input('But first, go ahead and input your name: ')
     return name
 
 def choose_class(name):
     print(f'Hello, {name}!')
-    print('In Chronicles of Valor you will be playing as one of the following classes: a Fighter, a Rogue or a Wizard. \nEach class has a unique story to tell and for you to shape, so go ahead and choose your favorite!')
+    print('In Chronicles of Valor you will be playing as one of the following classes: a Fighter, a Rogue or a Wizard.')
+    print('Each class has a unique story to tell and for you to shape, so go ahead and choose your favorite!')
     print('1. Fighter')
     print('2. Rogue')
     print('3. Wizard')
@@ -29,7 +31,10 @@ def start_story(name, player_class):
         current_story = story_segments[current_story](name)
 
 def story_fighter_start(name):
-    print(f'You are {name}, a proud warrior that just got to Stillhollow, a small village in the continent of Cydoia. \nAfter reaching a small plaza, you can see a couple of people walking around and talking to each other. \nBefore you can do anything, you suddenly hear a man shouting: "Help! Please, we need help from a hero!" You see a young man with rough and dirty clothes running towards you. \n"Please, are you a hero? Can you help this poor village?"')
+    print(f'You are {name}, a proud warrior that just got to Stillhollow, a small village in the continent of Cydoia.')
+    print('After reaching a small plaza, you can see a couple of people walking around and talking to each other.')
+    print('Before you can do anything, you suddenly hear a man shouting: "Help! Please, we need help from a hero!"')
+    print('You see a young man with rough and dirty clothes running towards you. "Please, are you a hero? Can you help this poor village?"')
     print('What would you like to do?')
     print('1. You like to be called a hero, you can certainly help this poor man.')
     print('2. Ask first what it is about')
@@ -46,7 +51,10 @@ def story_fighter_start(name):
         return 'fighter_start'
 
 def story_fighter_help_poor_man(name):
-    print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there." \nThe man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon. \nThe plant is so tall that you can’t see the end of it, being hidden in between the clouds. \n"Please, I’m too poor and weak to do anything about it. Can you go and save her?"')
+    print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
+    print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
+    print('The plant is so tall that you can’t see the end of it, being hidden in between the clouds.')
+    print('"Please, I’m too poor and weak to do anything about it. Can you go and save her?"')
     print('What would you like to do?')
     print('1. Accept the quest and go towards the giant beanstalk.')
     print('2. Too dangerous. Walk away.')
@@ -60,9 +68,26 @@ def story_fighter_help_poor_man(name):
         return 'fighter_help_poor_man'
 
 def story_fighter_ask_first(name):
-    return None
+    print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
+    print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
+    print('The plant is so tall that you can’t see the end of it, being hidden in between the clouds.')
+    print('"Please, I’m too poor and weak to do anything about it. Can you go and save her?"')
+    print('What would you like to do?')
+    print('1. Accept the quest and go towards the giant beanstalk.')
+    print('2. Too dangerous. Walk away.')
+    choice = input('Enter the number of your choice: ')
+    if choice == '1':
+        return 'fighter_accept_quest'
+    elif choice == '2':
+        return 'fighter_walk_away'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'fighter_help_poor_man'
 
 def story_fighter_try_to_ignore_the_man(name):
+    print('You look at the man disgusted and you try to ignore them. The man continues to follow you until you reach the end of the village, ')
+    print('at which point they decided to walk away. You leave the village, trying to find a better place for adventures')
+    print('END OF GAME')
     return None
 
 def story_fighter_accept_quest(name):
@@ -77,7 +102,7 @@ story_segments = {
     'fighter_ask_first': story_fighter_ask_first,
     'fighter_try_to_ignore_the_man': story_fighter_try_to_ignore_the_man,
     'fighter_accept_quest': story_fighter_accept_quest,
-    'fighter_walk_away': story_fighter_walk_away
+    'fighter_walk_away': story_fighter_walk_away,
 
 }
 
