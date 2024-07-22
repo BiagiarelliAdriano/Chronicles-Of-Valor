@@ -106,6 +106,10 @@ def story_fighter_accept_quest(name):
         return 'fighter_accept_quest'
 
 def story_fighter_walk_away(name):
+    print('You tell the man you are not ready for such a dangerous task. The man, saddened, walks away and keeps shouting out for help.')
+    print('Without much more reason to be in this village, you decide to leave and find more suitable adventures for you elsewhere.')
+    print('END OF GAME')
+    return None
 
 def story_fighter_rest_and_wait(name):
     return None
