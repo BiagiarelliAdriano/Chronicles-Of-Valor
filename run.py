@@ -131,12 +131,31 @@ def story_fighter_rest_and_wait(name):
         return 'fighter_rest_and_wait'
 
 def story_fighter_climb_right_away(name):
-    return None
+    print('You decide you can still continue your journey and take on this climb right away. The climb is difficult and tiring.')
+    print('You have to stop multiple times on top of one of the branches to recover your breath.')
+    print('The night comes and it gets harder and harder to actually see where you are going. You finally reach the clouds and now you cannot see anything.')
+    print('What would you like to do?')
+    print('1. Continue the climb.')
+    print('2. Wait for the following morning.')
+    choice = int(input('Enter the number of your choice'))
+    if choice == '1':
+        return 'story_continue_climb'
+    elif choice == '2':
+        return 'story_wait_for_morning'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'fighter_climb_right_away'
 
 def story_fighter_climb_normal_stairs(name):
     return None
 
 def story_fighter_climb_giant_stairs(name):
+    return None
+
+def story_continue_climb(name):
+    return None
+
+def story_wait_for_morning(name):
     return None
 
 story_segments = {
@@ -149,7 +168,8 @@ story_segments = {
     'fighter_rest_and_wait': story_fighter_rest_and_wait,
     'fighter_climb_right_away': story_fighter_climb_right_away,
     'fighter_climb_normal_stairs': story_fighter_climb_normal_stairs,
-    'fighter_climb_giant_stairs': story_fighter_climb_giant_stairs
+    'story_continue_climb': story_continue_climb,
+    'story_wait_for_morning': story_wait_for_morning
 
 }
 
