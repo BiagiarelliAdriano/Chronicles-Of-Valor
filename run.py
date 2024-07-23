@@ -13,7 +13,7 @@ def choose_class(name):
     print('2. Rogue')
     print('3. Wizard')
     while True:
-        choice = input('Input a number between 1 and 3: ')
+        choice = int(input('Input a number between 1 and 3: '))
         if choice in ['1', '2', '3']:
             return choice
         else:
@@ -39,7 +39,7 @@ def story_fighter_start(name):
     print('1. You like to be called a hero, you can certainly help this poor man.')
     print('2. Ask first what it is about')
     print('3. Try to ignore the man and leave the village')
-    choice = input('Enter the number of your choice: ')
+    choice = int(input('Enter the number of your choice: '))
     if choice == '1':
         return 'fighter_help_poor_man'
     elif choice == '2':
@@ -58,7 +58,7 @@ def story_fighter_help_poor_man(name):
     print('What would you like to do?')
     print('1. Accept the quest and go towards the giant beanstalk.')
     print('2. Too dangerous. Walk away.')
-    choice = input('Enter the number of your choice: ')
+    choice = int(input('Enter the number of your choice: '))
     if choice == '1':
         return 'fighter_accept_quest'
     elif choice == '2':
@@ -75,7 +75,7 @@ def story_fighter_ask_first(name):
     print('What would you like to do?')
     print('1. Accept the quest and go towards the giant beanstalk.')
     print('2. Too dangerous. Walk away.')
-    choice = input('Enter the number of your choice: ')
+    choice = int(input('Enter the number of your choice: '))
     if choice == '1':
         return 'fighter_accept_quest'
     elif choice == '2':
@@ -96,7 +96,7 @@ def story_fighter_accept_quest(name):
     print('What would you like to do?')
     print('1. Rest and wait for the day after.')
     print('2. Climb the giant beanstalk right away.')
-    choice = input('Enter the number of your choice: ')
+    choice = int(input('Enter the number of your choice: '))
     if choice == '1':
         return 'fighter_rest_and_wait'
     elif choice == '2':
@@ -121,7 +121,7 @@ def story_fighter_rest_and_wait(name):
     print('What would you like to do?')
     print('1. Take the stairs of your size.')
     print('2. Take the giant stairs.')
-    choice = input('Enter the number of your choice')
+    choice = int(input('Enter the number of your choice'))
     if choice == '1':
         return 'fighter_climb_normal_stairs'
     elif choice == '2':
@@ -168,6 +168,7 @@ story_segments = {
     'fighter_rest_and_wait': story_fighter_rest_and_wait,
     'fighter_climb_right_away': story_fighter_climb_right_away,
     'fighter_climb_normal_stairs': story_fighter_climb_normal_stairs,
+    'fighter_climb_giant_stairs': story_fighter_climb_giant_stairs,
     'story_continue_climb': story_continue_climb,
     'story_wait_for_morning': story_wait_for_morning
 
