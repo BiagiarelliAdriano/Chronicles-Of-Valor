@@ -1,3 +1,15 @@
+import os
+
+def clear_console():
+    """ 
+    Clears the console screen to ensure the new part of the story replaces the previous one.
+    Works for both Windows (using 'cls') and Unix-based systems (using 'clear').
+    """
+    if os.name == 'nt':
+        _ = os.system('cls')
+    else:
+        _ = os.system('clear')
+
 def introduction():
     print('Welcome to the Chronicles of Valor!')
     print('Chronicles of Valor is a text based adventure game where YOU decide your destiny!')
@@ -6,6 +18,7 @@ def introduction():
     return name
 
 def choose_class(name):
+    clear_console()
     print(f'Hello, {name}!')
     print('In Chronicles of Valor you will be playing as one of the following classes: a Fighter, a Rogue or a Wizard.')
     print('Each class has unique choices for your to shape the story as you wish, so go ahead and choose your favorite!')
@@ -27,6 +40,7 @@ def story_start(name, player_class):
     }
 
     class_description = class_descriptions[player_class]
+    clear_console()
     print(f'You are {name}, {class_description} that just got to Stillhollow, a small village in the continent of Cydoia.')
     print('After reaching a small plaza, you can see a couple of people walking around and talking to each other.')
     print('Before you can do anything, you suddenly hear a man shouting: "Help! Please, we need help from a hero!"')
@@ -47,6 +61,7 @@ def story_start(name, player_class):
         return 'story_start'
 
 def story_help_poor_man(name):
+    clear_console()
     print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
     print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
     print('The plant is so tall that you can’t see the end of it, being hidden in between the clouds.')
@@ -64,6 +79,7 @@ def story_help_poor_man(name):
         return 'story_help_poor_man'
 
 def story_ask_first(name):
+    clear_console()
     print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
     print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
     print('The plant is so tall that you can’t see the end of it, being hidden in between the clouds.')
@@ -81,12 +97,14 @@ def story_ask_first(name):
         return 'story_help_poor_man'
 
 def story_try_to_ignore_the_man(name):
+    clear_console()
     print('You look at the man disgusted and you try to ignore them. The man continues to follow you until you reach the end of the village, ')
     print('at which point they decided to walk away. You leave the village, trying to find a better place for adventures')
     print('END OF GAME')
     return None
 
 def story_accept_quest(name):
+    clear_console()
     print('You accept the quest of the poor man and assure them you will recover their daughter. You start your journey towards the giant beanstalk.')
     print('It is not that far, so it just takes you about half a day to get at the base of it. Looking up towards the sky, it looks like it will be a very long climb.')
     print('What would you like to do?')
@@ -102,12 +120,14 @@ def story_accept_quest(name):
         return 'story_accept_quest'
 
 def story_walk_away(name):
+    clear_console()
     print('You tell the man you are not ready for such a dangerous task. The man, saddened, walks away and keeps shouting out for help.')
     print('Without much more reason to be in this village, you decide to leave and find more suitable adventures for you elsewhere.')
     print('END OF GAME')
     return None
 
 def story_rest_and_wait(name):
+    clear_console()
     print('You decide you are too tired to start the climb right now. You build a small campfire and set up your travelling tent.')
     print('The night is uneventful and you take a good night sleep. The following morning, you are full of energy and ready to take on the climb.')
     print('You start going up, easily inserting your fingers in the plant to grab on to and climb. After a while, you reach the clouds.')
@@ -127,6 +147,7 @@ def story_rest_and_wait(name):
         return 'story_rest_and_wait'
 
 def story_climb_right_away(name):
+    clear_console()
     print('You decide you can still continue your journey and take on this climb right away. The climb is difficult and tiring.')
     print('You have to stop multiple times on top of one of the branches to recover your breath.')
     print('The night comes and it gets harder and harder to actually see where you are going. You finally reach the clouds and now you cannot see anything.')
@@ -143,6 +164,7 @@ def story_climb_right_away(name):
         return 'fighter_climb_right_away'
 
 def story_climb_normal_stairs(name):
+    clear_console()
     print('You start going up using normal stairs. While you go up, you can still see to your right the giant steps that quickly pick up and go even higher.')
     print('After a long time passes, you finally reach the end of the stairs. You can see a giant gate of stone in front of you floating on a cloud.')
     print('You look to your right and you can see that even the giant stairs end right here.')
