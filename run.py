@@ -11,6 +11,10 @@ def clear_console():
         _ = os.system('clear')
 
 def introduction():
+    """ 
+    Introduces the player to the game and prompts them to input their name.
+    Returns the player's name.
+    """
     print('Welcome to the Chronicles of Valor!')
     print('Chronicles of Valor is a text based adventure game where YOU decide your destiny!')
     print('You will venture forth into Cydoia, a flourishing continent with all kinds of adventures waiting for you.')
@@ -18,6 +22,10 @@ def introduction():
     return name
 
 def choose_class(name):
+    """ 
+    Greets the player by name and prompts them to choose a class (Fighter, Rogue, or Wizard).
+    Returns the player's class choice.
+    """
     clear_console()
     print(f'Hello, {name}!')
     print('In Chronicles of Valor you will be playing as one of the following classes: a Fighter, a Rogue or a Wizard.')
@@ -33,6 +41,12 @@ def choose_class(name):
             print('Invalid choice. Please choose 1, 2, or 3.')
 
 def story_start(name, player_class):
+    """ 
+    Starts the story based on the player's chosen class and sets up the initial description.
+    Prompts the player with a choice to proceed in the story.
+    Returns the next segment of the story based on the player's choice.
+    """
+
     class_descriptions = {
         '1': 'a proud warrior',
         '2': 'a cunning thief',
@@ -40,6 +54,7 @@ def story_start(name, player_class):
     }
 
     class_description = class_descriptions[player_class]
+
     clear_console()
     print(f'You are {name}, {class_description} that just got to Stillhollow, a small village in the continent of Cydoia.')
     print('After reaching a small plaza, you can see a couple of people walking around and talking to each other.')
@@ -61,6 +76,10 @@ def story_start(name, player_class):
         return 'story_start'
 
 def story_help_poor_man(name):
+    """ 
+    Continues the story for a player who chose to help the man.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
     clear_console()
     print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
     print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
@@ -79,6 +98,11 @@ def story_help_poor_man(name):
         return 'story_help_poor_man'
 
 def story_ask_first(name):
+    """ 
+    Continues the story for a player who chose to ask about the situation first.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
     clear_console()
     print('"Oh, thank goodness for your kind soul. My poor daughter was captured by the giants living in the giant beanstalk over there."')
     print('The man points towards what you now realize is a giant beanstalk that you didn’t notice before on the horizon.')
@@ -97,6 +121,10 @@ def story_ask_first(name):
         return 'story_help_poor_man'
 
 def story_try_to_ignore_the_man(name):
+    """ 
+    Ends the story for a player who chose to ignore the man.
+    """
+
     clear_console()
     print('You look at the man disgusted and you try to ignore them. The man continues to follow you until you reach the end of the village, ')
     print('at which point they decided to walk away. You leave the village, trying to find a better place for adventures')
@@ -104,6 +132,11 @@ def story_try_to_ignore_the_man(name):
     return None
 
 def story_accept_quest(name):
+    """ 
+    Continues the story for a player who chose to accept the man's quest.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
     clear_console()
     print('You accept the quest of the poor man and assure them you will recover their daughter. You start your journey towards the giant beanstalk.')
     print('It is not that far, so it just takes you about half a day to get at the base of it. Looking up towards the sky, it looks like it will be a very long climb.')
@@ -120,6 +153,10 @@ def story_accept_quest(name):
         return 'story_accept_quest'
 
 def story_walk_away(name):
+    """ 
+    Ends the game for the player who chose to walk away from the man after hearing their request.
+    """
+
     clear_console()
     print('You tell the man you are not ready for such a dangerous task. The man, saddened, walks away and keeps shouting out for help.')
     print('Without much more reason to be in this village, you decide to leave and find more suitable adventures for you elsewhere.')
@@ -127,6 +164,11 @@ def story_walk_away(name):
     return None
 
 def story_rest_and_wait(name):
+    """ 
+    Continues the story for a player who chose to rest before climbing the giant beanstalk.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
     clear_console()
     print('You decide you are too tired to start the climb right now. You build a small campfire and set up your travelling tent.')
     print('The night is uneventful and you take a good night sleep. The following morning, you are full of energy and ready to take on the climb.')
@@ -147,6 +189,11 @@ def story_rest_and_wait(name):
         return 'story_rest_and_wait'
 
 def story_climb_right_away(name):
+    """ 
+    Continues the story for a player who chose to climb the giant beanstalk right away.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
     clear_console()
     print('You decide you can still continue your journey and take on this climb right away. The climb is difficult and tiring.')
     print('You have to stop multiple times on top of one of the branches to recover your breath.')
@@ -164,6 +211,11 @@ def story_climb_right_away(name):
         return 'fighter_climb_right_away'
 
 def story_climb_normal_stairs(name):
+    """ 
+    Continues the story for a player who chose to climb the normal sized stairs.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
     clear_console()
     print('You start going up using normal stairs. While you go up, you can still see to your right the giant steps that quickly pick up and go even higher.')
     print('After a long time passes, you finally reach the end of the stairs. You can see a giant gate of stone in front of you floating on a cloud.')
