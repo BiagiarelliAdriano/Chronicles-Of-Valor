@@ -321,12 +321,38 @@ def story_open_gate(name):
         print('Invalid choice. Please choose 1, 2, or 3.')
 
 def story_call_out(name):
-    return None
+    """ 
+    Continues the story for a player who chose to call out for someone to open the gate.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You call out. There is no response.')
+    print('What would you like to do?')
+    print('1. Try and open the gate.')
+    print('2. Try and climb the gate.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_open_gate'
+    elif choice == '2':
+        return 'story_climb_gate'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+
 
 def story_climb_gate(name):
     return None
 
 def story_rest_before_gate(name):
+    return None
+
+def story_knock_on_door(name):
+    return None
+
+def story_climb_house(name):
+    return None
+
+def story_check_behind_house(name):
     return None
 
 story_segments = {
@@ -345,7 +371,10 @@ story_segments = {
     'story_open_gate': story_open_gate,
     'story_call_out': story_call_out,
     'story_climb_gate': story_climb_gate,
-    'story_rest_before_gate': story_rest_before_gate
+    'story_rest_before_gate': story_rest_before_gate,
+    'story_knock_on_door': story_knock_on_door,
+    'story_climb_house': story_climb_house,
+    'story_check_behind_house': story_check_behind_house
 
 }
 
