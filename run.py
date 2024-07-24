@@ -18,7 +18,7 @@ def introduction():
     print('Welcome to the Chronicles of Valor!')
     print('Chronicles of Valor is a text based adventure game where YOU decide your destiny!')
     print('You will venture forth into Cydoia, a flourishing continent with all kinds of adventures waiting for you.')
-    name = input('But first, go ahead and input your name: ')
+    name = input('But first, go ahead and input your name:\n')
     return name
 
 def choose_class(name):
@@ -34,7 +34,7 @@ def choose_class(name):
     print('2. Rogue')
     print('3. Wizard')
     while True:
-        choice = input('Input a number between 1 and 3: ')
+        choice = input('Input a number between 1 and 3:\n')
         if choice in ['1', '2', '3']:
             return choice
         else:
@@ -64,7 +64,7 @@ def story_start(name, player_class):
     print('1. You like to be called a hero, you can certainly help this poor man.')
     print('2. Ask first what it is about')
     print('3. Try to ignore the man and leave the village')
-    choice = input('Enter the number of your choice: ')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_help_poor_man'
     elif choice == '2':
@@ -88,7 +88,7 @@ def story_help_poor_man(name):
     print('What would you like to do?')
     print('1. Accept the quest and go towards the giant beanstalk.')
     print('2. Too dangerous. Walk away.')
-    choice = input('Enter the number of your choice: ')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_accept_quest'
     elif choice == '2':
@@ -111,7 +111,7 @@ def story_ask_first(name):
     print('What would you like to do?')
     print('1. Accept the quest and go towards the giant beanstalk.')
     print('2. Too dangerous. Walk away.')
-    choice = input('Enter the number of your choice: ')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_accept_quest'
     elif choice == '2':
@@ -143,7 +143,7 @@ def story_accept_quest(name):
     print('What would you like to do?')
     print('1. Rest and wait for the day after.')
     print('2. Climb the giant beanstalk right away.')
-    choice = input('Enter the number of your choice: ')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_rest_and_wait'
     elif choice == '2':
@@ -179,7 +179,7 @@ def story_rest_and_wait(name):
     print('What would you like to do?')
     print('1. Take the stairs of your size.')
     print('2. Take the giant stairs.')
-    choice = input('Enter the number of your choice')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_climb_normal_stairs'
     elif choice == '2':
@@ -201,7 +201,7 @@ def story_climb_right_away(name):
     print('What would you like to do?')
     print('1. Continue the climb.')
     print('2. Wait for the following morning.')
-    choice = input('Enter the number of your choice')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_continue_climb'
     elif choice == '2':
@@ -225,7 +225,7 @@ def story_climb_normal_stairs(name):
     print('1. Try and open the gate.')
     print('2. Call out for someone to open the gate.')
     print('3. Try and climb the gate.')
-    choice = input('Enter the number of your choice')
+    choice = input('Enter the number of your choice:\n')
     if choice == '1':
         return 'story_open_gate'
     elif choice == '2':
