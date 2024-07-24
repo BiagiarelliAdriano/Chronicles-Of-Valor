@@ -211,6 +211,11 @@ def story_climb_right_away(name):
         return 'fighter_climb_right_away'
 
 def story_continue_climb(name):
+    """ 
+    Ends the story for a player who chose to continue the climb of the giant beanstalk during the night.
+    """
+
+    clear_console()
     print('You persist on. You are not scared of some clouds and the darkness of the night. You continue with the same strategy to climb.')
     print('Suddenly, you do not notice a change in direction of a branch. You almost lose your grip, when a quick, strong current of wind picks up and pushes you away.')
     print('You lose your grip and fall 1000ft to the ground.')
@@ -218,7 +223,28 @@ def story_continue_climb(name):
     return None
 
 def story_wait_for_morning(name):
-    return None
+    """ 
+    Continues the story for a player who chose to rest and wait for the following morning the continue the climb.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You decide it is too dark to continue. You find a good place to lay down and rest a bit. It is not too long before the morning comes.')
+    print('Because of the high altitude, it was very cold and there were a lot of strong currents of cold wind all night.')
+    print('You for sure made the right choice of not continuing the climb during the night, but you are still very tired. Now with the sunlight, you can continue climbing.')
+    print('After a while, you finally get past the clouds and reach the end of the beanstalk. On top of the plant you find a giant platform built in smooth stone.')
+    print('You can see two sets of stairs going up the clouds. One has your size of steps, the other one has giant steps.')
+    print('What would you like to do?')
+    print('1. Take the stairs of your size.')
+    print('2. Take the giant stairs.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_climb_normal_stairs'
+    elif choice == '2':
+        return 'story_climb_giant_stairs'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
+        return 'story_rest_and_wait'
 
 def story_climb_normal_stairs(name):
     """ 
