@@ -304,7 +304,30 @@ def story_climb_giant_stairs(name):
         return 'story_climb_giant_stairs'
 
 def story_open_gate(name):
-    return None
+    """ 
+    Continues the story for a player who chose to push the gate open.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You start pushing one side of the gate. It is very big and it takes out all your strength to push.')
+    print('After around 30 seconds, you hear a slight sound of the gate actually moving. You push even harder and you do manage to start opening this side of the gate.')
+    print('After making enough room for you to squeeze in, you stop pushing and get to the other side of the gate. You see more stairs going up.')
+    print('Taking a sigh, you start your climb on these stairs. After a while, you manage to get to the end of the stairs and your drop to another cloud.')
+    print('You can now see a single, wooden, giant house, with green window, a red door and roof, and a chimney.')
+    print('What would you like to do?')
+    print('1. Knock on the front door.')
+    print('2. Climb the house.')
+    print('3. Find another way to get in from behind the house.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_knock_on_door'
+    elif choice == '2':
+        return 'story_climb_house'
+    elif choice == '3':
+        return 'story_check_behind_house'
+    else:
+        print('Invalid choice. Please choose 1, 2, or 3.')
 
 def story_call_out(name):
     return None
