@@ -392,12 +392,35 @@ def story_rest_before_gate(name):
     
 
 def story_knock_on_door(name):
-    return None
+    """ 
+    Continues the story for a player who chose to knock on the front door of the house.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You knock. You wait for a bit. You knock again.')
+    print('You start hearing the ground underneath your feet start to shake, as you hear stomping coming towards the door.')
+    print('What would you like to do?')
+    print('1. Hide next to the door.')
+    print('2. Wait until the door opens.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_hide_next_to_door'
+    elif choice == '2':
+        return 'story_wait_for_door_open'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
 
 def story_climb_house(name):
     return None
 
 def story_check_behind_house(name):
+    return None
+
+def story_hide_next_to_door(name):
+    return None
+
+def story_wait_for_door_open(name):
     return None
 
 story_segments = {
@@ -419,7 +442,9 @@ story_segments = {
     'story_rest_before_gate': story_rest_before_gate,
     'story_knock_on_door': story_knock_on_door,
     'story_climb_house': story_climb_house,
-    'story_check_behind_house': story_check_behind_house
+    'story_check_behind_house': story_check_behind_house,
+    'story_hide_next_to_door': story_hide_next_to_door,
+    'story_wait_for_door_open': story_wait_for_door_open
 
 }
 
