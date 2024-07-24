@@ -29,7 +29,7 @@ def choose_class(name):
     clear_console()
     print(f'Hello, {name}!')
     print('In Chronicles of Valor you will be playing as one of the following classes: a Fighter, a Rogue or a Wizard.')
-    print('Each class has unique choices for your to shape the story as you wish, so go ahead and choose your favorite!')
+    print('Each class has unique choices for you to shape the story as you wish, so go ahead and choose your favorite!')
     print('1. Fighter')
     print('2. Rogue')
     print('3. Wizard')
@@ -237,7 +237,35 @@ def story_climb_normal_stairs(name):
         return 'story_climb_normal_stairs'
 
 def story_climb_giant_stairs(name):
-    return None
+    """ 
+    Continues the story for a player who chose to climb the giant stairs.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You get up to the giant steps.')
+    print('You can figure out a way to jump and climb each step on the way. The climb is long and hard.')
+    print('You manage to get around half way, when the night comes around. You persist on because even in the darkness of the night, you can still see a bit from this altitude.')
+    print('So after a couple of hours, you finally manage to get up tha lst giant step. You are very tired. You can see a giant gate of stone in front of you floating on a cloud.')
+    print('You look to your left and you can see that also the stairs of your size end right here.')
+    print('You carefully step on the cloud, but you notice that it is basically like stepping on solid ground. You manage to get up to the gate.')
+    print('What would you like to do?')
+    print('1. Rest before doing anything with the gate.')
+    print('2. Try and open the gate.')
+    print('3. Call out for someone to open the gate.')
+    print('4. Try and climb the gate.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_rest_before_gate'
+    elif choice == '2':
+        return 'story_open_gate'
+    elif choice == '3':
+        return 'story_call_out'
+    elif choice == '4':
+        return 'story_climb_gate'
+    else:
+        print('Invalid choice. Please choose 1, 2, 3, or 4.')
+        return 'story_climb_giant_stairs'
 
 def story_continue_climb(name):
     return None
@@ -252,6 +280,9 @@ def story_call_out(name):
     return None
 
 def story_climb_gate(name):
+    return None
+
+def story_rest_before_gate(name):
     return None
 
 story_segments = {
@@ -269,7 +300,8 @@ story_segments = {
     'story_wait_for_morning': story_wait_for_morning,
     'story_open_gate': story_open_gate,
     'story_call_out': story_call_out,
-    'story_climb_gate': story_climb_gate
+    'story_climb_gate': story_climb_gate,
+    'story_rest_before_gate': story_rest_before_gate
 
 }
 
