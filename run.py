@@ -147,7 +147,24 @@ def story_fighter_climb_right_away(name):
         return 'fighter_climb_right_away'
 
 def story_fighter_climb_normal_stairs(name):
-    return None
+    print('You start going up using normal stairs. While you go up, you can still see to your right the giant steps that quickly pick up and go even higher.')
+    print('After a long time passes, you finally reach the end of the stairs. You can see a giant gate of stone in front of you floating on a cloud.')
+    print('You look to your right and you can see that even the giant stairs end right here.')
+    print('You carefully step on the cloud, but you notice that is is basically like stepping on solid ground. You manage to get up to the gate.')
+    print('What would you like to do?')
+    print('1. Try and open the gate.')
+    print('2. Call out for someone to open the gate.')
+    print('3. Try and climb the gate.')
+    choice = int(input('Enter the number of your choice'))
+    if choice == '1':
+        return 'story_open_gate'
+    elif choice == '2':
+        return 'story_call_out'
+    elif choice == '3':
+        return 'story_climb_gate'
+    else:
+        print('Invalid choice. Please choose 1, 2, or 3.')
+        return 'story_climb_normal_stairs'
 
 def story_fighter_climb_giant_stairs(name):
     return None
@@ -156,6 +173,15 @@ def story_continue_climb(name):
     return None
 
 def story_wait_for_morning(name):
+    return None
+
+def story_open_gate(name):
+    return None
+
+def story_call_out(name):
+    return None
+
+def story_climb_gate(name):
     return None
 
 story_segments = {
@@ -170,7 +196,10 @@ story_segments = {
     'fighter_climb_normal_stairs': story_fighter_climb_normal_stairs,
     'fighter_climb_giant_stairs': story_fighter_climb_giant_stairs,
     'story_continue_climb': story_continue_climb,
-    'story_wait_for_morning': story_wait_for_morning
+    'story_wait_for_morning': story_wait_for_morning,
+    'story_open_gate': story_open_gate,
+    'story_call_out': story_call_out,
+    'story_climb_gate': story_climb_gate
 
 }
 
