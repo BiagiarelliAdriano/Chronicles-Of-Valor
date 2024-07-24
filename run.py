@@ -341,7 +341,31 @@ def story_call_out(name):
 
 
 def story_climb_gate(name):
-    return None
+    """ 
+    Continues the story for a player who chose to climb the gate.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You look around. You notice, on one side of the gate, there are a couple of bumps that you could use to climb. You do so.')
+    print('You follow the bumps up one side of the gate.')
+    print('After reaching the top, you can see that behind the gate there is another set of stairs that go up even further towards another cloud.')
+    print('On top of there, you can see a small house. You climb the down to the other side of the gate. You take a sigh and start climbing the stairs.')
+    print('After a while, you manage to get to the end of these stairs, and what seemed like a small house from afar, you now see a giant house in front of you, ')
+    print('with green windows, red door and roof, and a chimney.')
+    print('What would you like to do?')
+    print('1. Knock on the front door.')
+    print('2. Climb the house.')
+    print('3. Find another way to get in from behind the house.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_knock_on_door'
+    elif choice == '2':
+        return 'story_climb_house'
+    elif choice == '3':
+        return 'story_check_behind_house'
+    else:
+        print('Invalid choice. Please choose 1, 2, or 3.')
 
 def story_rest_before_gate(name):
     return None
