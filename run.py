@@ -453,7 +453,25 @@ def story_check_behind_house(name):
         print('Invalid choice. Please choose 1 or 2.')
 
 def story_hide_next_to_door(name):
-    return None
+    """ 
+    Continues the story for a player who chose to hide next to the door when the giant opens it.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You quickly escape and put your back to the side of the wall, right next to the door. You wait. The giant steps get nearer. The door starts to open.')
+    print('You look up. You see a giant man standing right next to you, and he starts to look around.')
+    print('The giant says: "Mmh, stupid kids, always playing pranks on me."')
+    print('What would you like to do?')
+    print('1. Enter the house without being noticed.')
+    print('2. Confront the giant.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_enter_house_without_notice'
+    elif choice == '2':
+        return 'story_confront_giant'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
 
 def story_wait_for_door_open(name):
     return None
@@ -468,6 +486,12 @@ def story_open_back_door(name):
     return None
 
 def story_go_back_to_front(name):
+    return None
+
+def story_enter_house_without_notice(name):
+    return None
+
+def story_confront_giant(name):
     return None
 
 story_segments = {
@@ -495,7 +519,9 @@ story_segments = {
     'story_climb_inside_window': story_climb_inside_window,
     'story_find_another_way': story_find_another_way,
     'story_open_back_door': story_open_back_door,
-    'story_go_back_to_front': story_go_back_to_front
+    'story_go_back_to_front': story_go_back_to_front,
+    'story_enter_house_without_notice': story_enter_house_without_notice,
+    'story_confront_giant': story_confront_giant
 
 }
 
