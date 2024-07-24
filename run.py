@@ -73,7 +73,6 @@ def story_start(name, player_class):
         return 'story_try_to_ignore_the_man'
     else:
         print('Invalid choice. Please choose 1, 2, or 3.')
-        return 'story_start'
 
 def story_help_poor_man(name):
     """ 
@@ -95,7 +94,6 @@ def story_help_poor_man(name):
         return 'story_walk_away'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'story_help_poor_man'
 
 def story_ask_first(name):
     """ 
@@ -118,7 +116,6 @@ def story_ask_first(name):
         return 'story_walk_away'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'story_help_poor_man'
 
 def story_try_to_ignore_the_man(name):
     """ 
@@ -150,7 +147,6 @@ def story_accept_quest(name):
         return 'story_climb_right_away'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'story_accept_quest'
 
 def story_walk_away(name):
     """ 
@@ -186,7 +182,6 @@ def story_rest_and_wait(name):
         return 'story_climb_giant_stairs'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'story_rest_and_wait'
 
 def story_climb_right_away(name):
     """ 
@@ -208,7 +203,6 @@ def story_climb_right_away(name):
         return 'story_wait_for_morning'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'fighter_climb_right_away'
 
 def story_continue_climb(name):
     """ 
@@ -244,7 +238,6 @@ def story_wait_for_morning(name):
         return 'story_climb_giant_stairs'
     else:
         print('Invalid choice. Please choose 1 or 2.')
-        return 'story_rest_and_wait'
 
 def story_climb_normal_stairs(name):
     """ 
@@ -270,7 +263,6 @@ def story_climb_normal_stairs(name):
         return 'story_climb_gate'
     else:
         print('Invalid choice. Please choose 1, 2, or 3.')
-        return 'story_climb_normal_stairs'
 
 def story_climb_giant_stairs(name):
     """ 
@@ -301,7 +293,6 @@ def story_climb_giant_stairs(name):
         return 'story_climb_gate'
     else:
         print('Invalid choice. Please choose 1, 2, 3, or 4.')
-        return 'story_climb_giant_stairs'
 
 def story_open_gate(name):
     """ 
