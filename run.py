@@ -412,7 +412,26 @@ def story_knock_on_door(name):
         print('Invalid choice. Please choose 1 or 2.')
 
 def story_climb_house(name):
-    return None
+    """ 
+    Continues the story for a player who chose to climb a side of the house.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You find small openings in between the wooden beams so you can climb up. You reach one of the windows. You look inside.')
+    print('Without being noticed, you can see a giant, cozy living room and kitchen. It looks like a normal house, very similar to the one you grew up in.')
+    print('You see a giant man sleeping on an armchair in front of a fireplace. You see another figure on the ground in front of the gaint.')
+    print('You squint your eyes. A child. A little girl, who is blocked inside a cage, looking sad.')
+    print('What would you like to do?')
+    print('1. Silently open the window and climb inside.')
+    print('2. Find another way.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_climb_inside_window'
+    elif choice == '2':
+        return 'story_find_another_way'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
 
 def story_check_behind_house(name):
     return None
@@ -421,6 +440,12 @@ def story_hide_next_to_door(name):
     return None
 
 def story_wait_for_door_open(name):
+    return None
+
+def story_climb_inside_window(name):
+    return None
+
+def story_find_another_way(name):
     return None
 
 story_segments = {
@@ -444,7 +469,9 @@ story_segments = {
     'story_climb_house': story_climb_house,
     'story_check_behind_house': story_check_behind_house,
     'story_hide_next_to_door': story_hide_next_to_door,
-    'story_wait_for_door_open': story_wait_for_door_open
+    'story_wait_for_door_open': story_wait_for_door_open,
+    'story_climb_inside_window': story_climb_inside_window,
+    'story_find_another_way': story_find_another_way
 
 }
 
