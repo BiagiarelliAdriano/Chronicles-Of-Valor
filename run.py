@@ -434,7 +434,23 @@ def story_climb_house(name):
         print('Invalid choice. Please choose 1 or 2.')
 
 def story_check_behind_house(name):
-    return None
+    """ 
+    Continues the story for a player who chose to check behind the house.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You go around the house. You can see there is another, slightly smaller door.')
+    print('What would you like to do?')
+    print('1. Open the door.')
+    print('2. Go back to the front.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_open_back_door'
+    elif choice == '2':
+        return 'story_go_back_to_front'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
 
 def story_hide_next_to_door(name):
     return None
@@ -446,6 +462,12 @@ def story_climb_inside_window(name):
     return None
 
 def story_find_another_way(name):
+    return None
+
+def story_open_back_door(name):
+    return None
+
+def story_go_back_to_front(name):
     return None
 
 story_segments = {
@@ -471,7 +493,9 @@ story_segments = {
     'story_hide_next_to_door': story_hide_next_to_door,
     'story_wait_for_door_open': story_wait_for_door_open,
     'story_climb_inside_window': story_climb_inside_window,
-    'story_find_another_way': story_find_another_way
+    'story_find_another_way': story_find_another_way,
+    'story_open_back_door': story_open_back_door,
+    'story_go_back_to_front': story_go_back_to_front
 
 }
 
