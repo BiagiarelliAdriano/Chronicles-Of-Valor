@@ -210,6 +210,16 @@ def story_climb_right_away(name):
         print('Invalid choice. Please choose 1 or 2.')
         return 'fighter_climb_right_away'
 
+def story_continue_climb(name):
+    print('You persist on. You are not scared of some clouds and the darkness of the night. You continue with the same strategy to climb.')
+    print('Suddenly, you do not notice a change in direction of a branch. You almost lose your grip, when a quick, strong current of wind picks up and pushes you away.')
+    print('You lose your grip and fall 1000ft to the ground.')
+    print('END OF GAME')
+    return None
+
+def story_wait_for_morning(name):
+    return None
+
 def story_climb_normal_stairs(name):
     """ 
     Continues the story for a player who chose to climb the normal sized stairs.
@@ -266,12 +276,6 @@ def story_climb_giant_stairs(name):
     else:
         print('Invalid choice. Please choose 1, 2, 3, or 4.')
         return 'story_climb_giant_stairs'
-
-def story_continue_climb(name):
-    return None
-
-def story_wait_for_morning(name):
-    return None
 
 def story_open_gate(name):
     return None
