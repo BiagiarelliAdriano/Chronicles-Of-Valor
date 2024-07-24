@@ -368,7 +368,28 @@ def story_climb_gate(name):
         print('Invalid choice. Please choose 1, 2, or 3.')
 
 def story_rest_before_gate(name):
-    return None
+    """ 
+    Continues the story for a player who chose to rest before doing anything with the gate.
+    Prompts the player with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('You set up a small campfire and your travelling tent on the cloud. It feels weird, but yet interesting that you are standing on an actual cloud.')
+    print('Focused on your mission, you rest for the night. The following morning, with new determination, you think of what to do with the gate.')
+    print('What would you like to do?')
+    print('1. Knock on the front door.')
+    print('2. Climb the house.')
+    print('3. Find another way to get in from behind the house.')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_knock_on_door'
+    elif choice == '2':
+        return 'story_climb_house'
+    elif choice == '3':
+        return 'story_check_behind_house'
+    else:
+        print('Invalid choice. Please choose 1, 2, or 3.')
+    
 
 def story_knock_on_door(name):
     return None
