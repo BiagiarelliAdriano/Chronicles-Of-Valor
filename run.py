@@ -640,7 +640,30 @@ What would you like to do?
 
 
 def story_open_back_door(name):
-    return None
+    """
+    Continues the story for a player who chose to open the back door.\
+    Prompts the player with further choices and returns the next\
+    segment of the story.
+    """
+
+    clear_console()
+    print('''You run towards the smaller door. It is still giant for you.
+You push, and you manage to open it far enough for you enter. When you get
+inside, the door automatically closes behind you, without making noise. You are
+now standing in a giant hallway, next to two pair of giant doors in each side,
+and what appears to be a giant room all the way to the other side of the
+hallway. You can see the other side of the front door.
+What would you like to do?
+1. Search the left door.
+2. Search the right door.
+3. Go down the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_search_left_door'
+    elif choice == 2:
+        return 'story_search_right_door'
+    elif choice == 3:
+        return 'story_go_down_hallway'
 
 
 def story_go_back_to_front(name):
@@ -664,6 +687,18 @@ def story_climb_down(name):
 
 
 def story_exit_window(name):
+    return None
+
+
+def story_search_left_door(name):
+    return None
+
+
+def story_search_right_door(name):
+    return None
+
+
+def story_go_down_hallway(name):
     return None
 
 
@@ -697,7 +732,10 @@ story_segments = {
     'story_confront_giant': story_confront_giant,
     'story_stare_at_giant': story_stare_at_giant,
     'story_climb_down': story_climb_down,
-    'story_exit_window': story_exit_window
+    'story_exit_window': story_exit_window,
+    'story_search_left_door': story_search_left_door,
+    'story_search_right_door': story_search_right_door,
+    'story_go_down_hallway': story_go_down_hallway
 
 }
 
