@@ -48,8 +48,14 @@ def introduction():
 Chronicles of Valor is a text based adventure game where YOU decide
 your destiny! You will venture forth into Cydoia, a flourishing continent
 with all kinds of adventures waiting for you.''')
-    name = input('But first, go ahead and input your name:\n')
-    return name
+    while True:
+        name = input('But first, go ahead and input your name:\n').strip()
+        if not name:
+            print('Invalid. Please input at least one character.')
+        elif any(char.isdigit() for char in name):
+            print('Invalid. Name should not contain numbers.')
+        else:
+            return name
 
 
 def choose_class(name):
