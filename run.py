@@ -107,15 +107,13 @@ What would you like to do?
 1. You like to be called a hero, you can certainly help this poor man.
 2. Ask first what it is about.
 3. Try to ignore the man and leave the village.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_help_poor_man'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_ask_first'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_try_to_ignore_the_man'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_help_poor_man(name):
@@ -135,13 +133,11 @@ about it. Can you go and save her?"
 What would you like to do?
 1. Accept the quest and go towards the giant beanstalk.
 2. Too dangerous. Walk away.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_accept_quest'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_walk_away'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_ask_first(name):
@@ -161,13 +157,11 @@ and weak to do anything about it. Can you go and save her?"
 What would you like to do?
 1. Accept the quest and go towards the giant beanstalk.
 2. Too dangerous. Walk away.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_accept_quest'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_walk_away'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_try_to_ignore_the_man(name):
@@ -200,13 +194,11 @@ will be a very long climb.
 What would you like to do?
 1. Rest and wait for the day after.
 2. Climb the giant beanstalk right away.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_rest_and_wait'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_right_away'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_walk_away(name):
@@ -246,13 +238,11 @@ of your size, the other has giant steps.
 What would you like to do?
 1. Take the stairs of your size.
 2. Take the giant stairs.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_climb_normal_stairs'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_giant_stairs'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_climb_right_away(name):
@@ -272,13 +262,11 @@ anything.
 What would you like to do?
 1. Continue the climb.
 2. Wait for the following morning.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_continue_climb'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_wait_for_morning'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_continue_climb(name):
@@ -318,13 +306,11 @@ steps, the other one has giant steps.
 What would you like to do?
 1. Take the stairs of your size.
 2. Take the giant stairs.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_climb_normal_stairs'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_giant_stairs'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_climb_normal_stairs(name):
@@ -346,15 +332,13 @@ What would you like to do?
 1. Try and open the gate.
 2. Call out for someone to open the gate.
 3. Try and climb the gate.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_open_gate'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_call_out'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_climb_gate'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_climb_giant_stairs(name):
@@ -380,17 +364,15 @@ What would you like to do?
 2. Try and open the gate.
 3. Call out for someone to open the gate.
 4. Try and climb the gate.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3, 4])
+    if choice == 1:
         return 'story_rest_before_gate'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_open_gate'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_call_out'
-    elif choice == '4':
+    elif choice == 4:
         return 'story_climb_gate'
-    else:
-        print('Invalid choice. Please choose 1, 2, 3, or 4.')
 
 
 def story_open_gate(name):
@@ -414,15 +396,13 @@ What would you like to do?
 1. Knock on the front door.
 2. Climb the house.
 3. Find another way to get in from behind the house.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_knock_on_door'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_house'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_check_behind_house'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_call_out(name):
@@ -437,13 +417,11 @@ def story_call_out(name):
 What would you like to do?
 1. Try and open the gate.
 2. Try and climb the gate.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_open_gate'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_gate'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_climb_gate(name):
@@ -468,15 +446,13 @@ What would you like to do?
 1. Knock on the front door.
 2. Climb the house.
 3. Find another way to get in from behind the house.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_knock_on_door'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_house'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_check_behind_house'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_rest_before_gate(name):
@@ -495,15 +471,13 @@ What would you like to do?
 1. Knock on the front door.
 2. Climb the house.
 3. Find another way to get in from behind the house.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_knock_on_door'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_climb_house'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_check_behind_house'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_knock_on_door(name):
@@ -520,13 +494,11 @@ towards the door.
 What would you like to do?
 1. Hide next to the door.
 2. Wait until the door opens.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_hide_next_to_door'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_wait_for_door_open'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_climb_house(name):
@@ -547,13 +519,11 @@ A little girl, who is blocked inside a cage, looking sad.
 What would you like to do?
 1. Silently open the window and climb inside.
 2. Find another way.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_climb_inside_window'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_find_another_way'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_check_behind_house(name):
@@ -569,13 +539,11 @@ smaller door.
 What would you like to do?
 1. Open the door.
 2. Go back to the front.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_open_back_door'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_go_back_to_front'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_hide_next_to_door(name):
@@ -594,13 +562,11 @@ always playing pranks on me."
 What would you like to do?
 1. Enter the house without being noticed.
 2. Confront the giant.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_enter_house_without_notice'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_confront_giant'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_wait_for_door_open(name):
@@ -621,15 +587,13 @@ What would you like to do?
 1. Stare at the giant without saying a word.
 2. Confront the giant.
 3. Enter the house without being noticed.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
         return 'story_stare_at_giant'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_confront_giant'
-    elif choice == '3':
+    elif choice == 3:
         return 'story_enter_house_without_notice'
-    else:
-        print('Invalid choice. Please choose 1, 2, or 3.')
 
 
 def story_climb_inside_window(name):
@@ -647,13 +611,11 @@ You are now inside. You can hear the giant man snoring loudly.
 What would you like to do?
 1. Climb down.
 2. Exit through the window.''')
-    choice = input('Enter the number of your choice:\n')
-    if choice == '1':
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
         return 'story_climb_down'
-    elif choice == '2':
+    elif choice == 2:
         return 'story_exit_window'
-    else:
-        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_find_another_way(name):
