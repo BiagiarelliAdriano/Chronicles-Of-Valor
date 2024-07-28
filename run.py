@@ -19,6 +19,13 @@ def clear_console():
 
 
 def get_valid_choice(prompt, valid_choices):
+    """
+    Prompt the user for input and validate the choice.\
+    Continuosly prompts until the user enters a valid choice\
+    (non-blank, numeric, and within valid_choices). Display\
+    error messages for invalid inputs.
+    """
+
     while True:
         choice = input(prompt)
         if not choice.strip():
@@ -26,7 +33,8 @@ def get_valid_choice(prompt, valid_choices):
         elif not choice.isdigit():
             print('Please input a number.')
         elif int(choice) not in valid_choices:
-            print(f'Invalid choice. Please choose {", ".join(map(str, valid_choices))}.')
+            print(f'Invalid choice. Please choose '
+                  f'{", ".join(map(str, valid_choices))}.')
         else:
             return int(choice)
 
@@ -627,7 +635,7 @@ def story_climb_inside_window(name):
 
     clear_console()
     print(''' You try to push a sided of the window. The window is open.
-You manage to push it just far enough so you can squeeze in. You plop to 
+You manage to push it just far enough so you can squeeze in. You plop to
 the other side. You slowly close the window without making noise.
 You are now inside. You can hear the giant man snoring loudly.
 What would you like to do?
