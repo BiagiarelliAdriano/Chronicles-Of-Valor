@@ -1,4 +1,9 @@
+# Import statements
 import os
+
+
+# Global variables
+PROMPT = 'Enter the number of your choice:\n'
 
 
 def clear_console():
@@ -11,6 +16,19 @@ def clear_console():
         _ = os.system('cls')
     else:
         _ = os.system('clear')
+
+
+def get_valid_choice(prompt, valid_choices):
+    while True:
+        choice = input(prompt)
+        if not choice.strip():
+            print('Please input a number.')
+        elif not choice.isdigit():
+            print('Please input a number.')
+        elif int(choice) not in valid_choices:
+            print(f'Invalid choice. Please choose {", ".join(map(str, valid_choices))}.')
+        else:
+            return int(choice)
 
 
 def introduction():
