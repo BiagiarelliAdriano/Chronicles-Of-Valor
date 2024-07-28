@@ -601,7 +601,27 @@ What would you like to do?
 
 
 def story_climb_inside_window(name):
-    return None
+    """
+    Continues the story for a player who chose to climb inside the\
+    window. Prompts the player with further choices and returns the next\
+    segment of the story.
+    """
+
+    clear_console()
+    print(''' You try to push a sided of the window. The window is open.
+You manage to push it just far enough so you can squeeze in. You plop to 
+the other side. You slowly close the window without making noise.
+You are now inside. You can hear the giant man snoring loudly.
+What would you like to do?
+1. Climb down.
+2. Exit through the window.''')
+    choice = input('Enter the number of your choice:\n')
+    if choice == '1':
+        return 'story_climb_down'
+    elif choice == '2':
+        return 'story_exit_window'
+    else:
+        print('Invalid choice. Please choose 1 or 2.')
 
 
 def story_find_another_way(name):
@@ -625,6 +645,14 @@ def story_confront_giant(name):
 
 
 def story_stare_at_giant(name):
+    return None
+
+
+def story_climb_down(name):
+    return None
+
+
+def story_exit_window(name):
     return None
 
 
@@ -656,7 +684,9 @@ story_segments = {
     'story_go_back_to_front': story_go_back_to_front,
     'story_enter_house_without_notice': story_enter_house_without_notice,
     'story_confront_giant': story_confront_giant,
-    'story_stare_at_giant': story_stare_at_giant
+    'story_stare_at_giant': story_stare_at_giant,
+    'story_climb_down': story_climb_down,
+    'story_exit_window': story_exit_window
 
 }
 
