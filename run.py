@@ -619,7 +619,24 @@ What would you like to do?
 
 
 def story_find_another_way(name):
-    return None
+    """
+    Continues the story for a player who chose to find another way.\
+    Prompts the player with further choices and returns the next\
+    segment of the story.
+    """
+
+    clear_console()
+    print(''' You decide it's too risky to enter the house this way. You climb
+down the side of the house where you came from. You are now standing in front
+of the house.
+What would you like to do?
+1. Knock on the front door.
+2. Find another way to get in from behind the house.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_knock_on_door'
+    elif choice == 2:
+        return 'story_check_behind_house'
 
 
 def story_open_back_door(name):
