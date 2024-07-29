@@ -738,7 +738,8 @@ def story_stare_at_giant(name):
     """
 
     clear_console()
-    print('''The giant man stands before you. He looks around confused and angry, before saying: "Mmmh, stupid kids, always playing pranks on us."
+    print('''The giant man stands before you. He looks around confused and
+angry, before saying: "Mmmh, stupid kids, always playing pranks on us."
 He goes to close the door again.
 What would you like to do?
 1. Confront the giant.
@@ -751,7 +752,30 @@ What would you like to do?
 
 
 def story_climb_down(name):
-    return None
+    """
+    Continues the story for a player who chose to climb down\
+    after entering the house through a window. Prompts the player\
+    with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You are able to slide down a piece of wood to land on a giant
+dinner table. You are able to slide down the table and get at its feet. You are
+now hiding behind one of the legs. You look around. The giant man is still
+soundly sleeping on the armchair. The girl doesn't seem to notice your
+presence. You can now see that a hallway opens up on the other side of the
+room to the rest of the house.
+What would you like to do?
+1. Get closer to the little girl.
+2. Run towards the cage.
+3. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_get_closer_to_girl'
+    elif choice == 2:
+        return 'story_run_towards_cage'
+    elif choice == 3:
+        return 'story_run_towards_hallway'
 
 
 def story_exit_window(name):
