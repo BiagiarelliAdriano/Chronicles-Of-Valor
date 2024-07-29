@@ -717,6 +717,14 @@ What would you like to do?
 
 
 def story_confront_giant(name):
+    """
+    Ends the game for the user that tried to confront the giant.
+    """
+
+    clear_console()
+    print(f'''You yell out to the giant: "Hey, you giant! My name is {name}, and I'm here to get back the little girl you kidnapped from the village nearby."
+The giant angrily looks down towards you. He brings up his giant foot and stomps on you.
+END OF GAME''')
     return None
 
 
