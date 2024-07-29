@@ -7,11 +7,11 @@ PROMPT = 'Enter the number of your choice:\n'
 
 
 def clear_console():
-    """
-    Clears the console screen to ensure the new part of the story replaces\
-    the previous one. Works for both Windows (using 'cls') and Unix-based\
+    '''
+    Clears the console screen to ensure the new part of the story replaces
+    the previous one. Works for both Windows (using 'cls') and Unix-based
          systems (using 'clear').
-    """
+    '''
     if os.name == 'nt':
         _ = os.system('cls')
     else:
@@ -19,12 +19,12 @@ def clear_console():
 
 
 def get_valid_choice(prompt, valid_choices):
-    """
-    Prompt the user for input and validate the choice.\
-    Continuosly prompts until the user enters a valid choice\
-    (non-blank, numeric, and within valid_choices). Display\
+    '''
+    Prompt the user for input and validate the choice.
+    Continuosly prompts until the user enters a valid choice
+    (non-blank, numeric, and within valid_choices). Display
     error messages for invalid inputs.
-    """
+    '''
 
     while True:
         choice = input(prompt)
@@ -40,10 +40,10 @@ def get_valid_choice(prompt, valid_choices):
 
 
 def introduction():
-    """
+    '''
     Introduces the player to the game and prompts them to input their name.
     Returns the player's name.
-    """
+    '''
     print('''Welcome to the Chronicles of Valor!
 Chronicles of Valor is a text based adventure game where YOU decide
 your destiny! You will venture forth into Cydoia, a flourishing continent
@@ -59,10 +59,10 @@ with all kinds of adventures waiting for you.''')
 
 
 def choose_class(name):
-    """
-    Greets the player by name and prompts them to choose a class\
+    '''
+    Greets the player by name and prompts them to choose a class
     (Fighter, Rogue, or Wizard). Returns the player's class choice.
-    """
+    '''
     clear_console()
     print(f'''Hello, {name}!
 In Chronicles of Valor you will be playing as one of the following
@@ -80,12 +80,12 @@ you to shape the story as you wish, so go ahead and choose your favorite!
 
 
 def story_start(name, player_class):
-    """
-    Starts the story based on the player's chosen class and sets up\
-    the initial description. Prompts the player with a choice to proceed\
-    in the story. Returns the next segment of the story based on\
+    '''
+    Starts the story based on the player's chosen class and sets up
+    the initial description. Prompts the player with a choice to proceed
+    in the story. Returns the next segment of the story based on
     the player's choice.
-    """
+    '''
 
     class_descriptions = {
         '1': 'a proud warrior',
@@ -117,11 +117,11 @@ What would you like to do?
 
 
 def story_help_poor_man(name):
-    """
+    '''
     Continues the story for a player who chose to help the man.
-    Prompts the player with further choices and returns the next segment\
+    Prompts the player with further choices and returns the next segment
     of the story.
-    """
+    '''
     clear_console()
     print('''"Oh, thank goodness for your kind soul. My poor daughter was
 captured by the giants living in the giant beanstalk over there."
@@ -141,11 +141,11 @@ What would you like to do?
 
 
 def story_ask_first(name):
-    """
-    Continues the story for a player who chose to ask about the situation\
-    first. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to ask about the situation
+    first. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''"Oh, thank goodness for your kind soul. My poor daughter was
@@ -165,9 +165,9 @@ What would you like to do?
 
 
 def story_try_to_ignore_the_man(name):
-    """
+    '''
     Ends the story for a player who chose to ignore the man.
-    """
+    '''
 
     clear_console()
     print('''You look at the man disgusted and you try to ignore them. The man
@@ -179,11 +179,11 @@ END OF GAME''')
 
 
 def story_accept_quest(name):
-    """
+    '''
     Continues the story for a player who chose to accept the man's quest.
-    Prompts the player with further choices and returns the next segment\
+    Prompts the player with further choices and returns the next segment
     of the story.
-    """
+    '''
 
     clear_console()
     print('''You accept the quest of the poor man and assure them you will
@@ -202,10 +202,10 @@ What would you like to do?
 
 
 def story_walk_away(name):
-    """
-    Ends the game for the player who chose to walk away from the man after\
+    '''
+    Ends the game for the player who chose to walk away from the man after
     hearing their request.
-    """
+    '''
 
     clear_console()
     print('''You tell the man you are not ready for such a dangerous task.
@@ -217,11 +217,11 @@ END OF GAME''')
 
 
 def story_rest_and_wait(name):
-    """
-    Continues the story for a player who chose to rest before climbing\
-    the giant beanstalk. Prompts the player with further choices and returns\
+    '''
+    Continues the story for a player who chose to rest before climbing
+    the giant beanstalk. Prompts the player with further choices and returns
     the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You decide you are too tired to start the climb right now.
@@ -246,11 +246,11 @@ What would you like to do?
 
 
 def story_climb_right_away(name):
-    """
-    Continues the story for a player who chose to climb the giant beanstalk\
-    right away. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to climb the giant beanstalk
+    right away. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You decide you can still continue your journey and take on this
@@ -270,10 +270,10 @@ What would you like to do?
 
 
 def story_continue_climb(name):
-    """
-    Ends the story for a player who chose to continue the climb of the\
+    '''
+    Ends the story for a player who chose to continue the climb of the
     giant beanstalk during the night.
-    """
+    '''
 
     clear_console()
     print('''You persist on. You are not scared of some clouds and the darkness
@@ -286,11 +286,11 @@ END OF GAME''')
 
 
 def story_wait_for_morning(name):
-    """
-    Continues the story for a player who chose to rest and wait for the\
-    following morning the continue the climb. Prompts the player with further\
+    '''
+    Continues the story for a player who chose to rest and wait for the
+    following morning the continue the climb. Prompts the player with further
     choices and returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You decide it is too dark to continue. You find a good place to
@@ -314,11 +314,11 @@ What would you like to do?
 
 
 def story_climb_normal_stairs(name):
-    """
-    Continues the story for a player who chose to climb the normal sized\
-    stairs. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to climb the normal sized
+    stairs. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You start going up using normal stairs. While you go up, you can
@@ -342,11 +342,11 @@ What would you like to do?
 
 
 def story_climb_giant_stairs(name):
-    """
+    '''
     Continues the story for a player who chose to climb the giant stairs.
-    Prompts the player with further choices and returns the next segment of\
+    Prompts the player with further choices and returns the next segment of
     the story.
-    """
+    '''
 
     clear_console()
     print('''You get up to the giant steps. You can figure out a way to jump
@@ -376,11 +376,11 @@ What would you like to do?
 
 
 def story_open_gate(name):
-    """
+    '''
     Continues the story for a player who chose to push the gate open.
-    Prompts the player with further choices and returns the next segment of\
+    Prompts the player with further choices and returns the next segment of
     the story.
-    """
+    '''
 
     clear_console()
     print('''You start pushing one side of the gate. It is very big and it
@@ -406,11 +406,11 @@ What would you like to do?
 
 
 def story_call_out(name):
-    """
-    Continues the story for a player who chose to call out for someone to open\
-    the gate. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to call out for someone to open
+    the gate. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You call out. There is no response.
@@ -425,11 +425,11 @@ What would you like to do?
 
 
 def story_climb_gate(name):
-    """
+    '''
     Continues the story for a player who chose to climb the gate.
-    Prompts the player with further choices and returns the next segment of\
+    Prompts the player with further choices and returns the next segment of
     the story.
-    """
+    '''
 
     clear_console()
     print('''You look around. You notice, on one side of the gate, there are a
@@ -456,11 +456,11 @@ What would you like to do?
 
 
 def story_rest_before_gate(name):
-    """
-    Continues the story for a player who chose to rest before doing anything\
-    with the gate. Prompts the player with further choices and returns the\
+    '''
+    Continues the story for a player who chose to rest before doing anything
+    with the gate. Prompts the player with further choices and returns the
     next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You set up a small campfire and your travelling tent on the cloud.
@@ -481,11 +481,11 @@ What would you like to do?
 
 
 def story_knock_on_door(name):
-    """
-    Continues the story for a player who chose to knock on the front door of\
-    the house. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to knock on the front door of
+    the house. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You knock. You wait for a bit. You knock again. You start hearing
@@ -502,11 +502,11 @@ What would you like to do?
 
 
 def story_climb_house(name):
-    """
+    '''
     Continues the story for a player who chose to climb a side of the house.
-    Prompts the player with further choices and returns the next segment of\
+    Prompts the player with further choices and returns the next segment of
     the story.
-    """
+    '''
 
     clear_console()
     print('''You find small openings in between the wooden beams so you can
@@ -527,11 +527,11 @@ What would you like to do?
 
 
 def story_check_behind_house(name):
-    """
+    '''
     Continues the story for a player who chose to check behind the house.
-    Prompts the player with further choices and returns the next segment of\
+    Prompts the player with further choices and returns the next segment of
     the story.
-    """
+    '''
 
     clear_console()
     print('''You go around the house. You can see there is another, slightly
@@ -547,11 +547,11 @@ What would you like to do?
 
 
 def story_hide_next_to_door(name):
-    """
-    Continues the story for a player who chose to hide next to the door when\
-    the giant opens it. Prompts the player with further choices and returns\
+    '''
+    Continues the story for a player who chose to hide next to the door when
+    the giant opens it. Prompts the player with further choices and returns
     the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You quickly escape and put your back to the side of the wall,
@@ -570,11 +570,11 @@ What would you like to do?
 
 
 def story_wait_for_door_open(name):
-    """
-    Continues the story for a player who chose to wait for the front door\
-    to open. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to wait for the front door
+    to open. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You run away from the door. You stop where you can confidently say
@@ -597,11 +597,11 @@ What would you like to do?
 
 
 def story_climb_inside_window(name):
-    """
-    Continues the story for a player who chose to climb inside the\
-    window. Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to climb inside the
+    window. Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print(''' You try to push a sided of the window. The window is open.
@@ -619,11 +619,11 @@ What would you like to do?
 
 
 def story_find_another_way(name):
-    """
-    Continues the story for a player who chose to find another way.\
-    Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to find another way.
+    Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print(''' You decide it is too risky to enter the house this way. You climb
@@ -640,11 +640,11 @@ What would you like to do?
 
 
 def story_open_back_door(name):
-    """
-    Continues the story for a player who chose to open the back door.\
-    Prompts the player with further choices and returns the next\
+    '''
+    Continues the story for a player who chose to open the back door.
+    Prompts the player with further choices and returns the next
     segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You run towards the smaller door. It is still giant for you.
@@ -667,11 +667,11 @@ What would you like to do?
 
 
 def story_go_back_to_front(name):
-    """
-    Continues the story for a player who chose to go back to the front\
-    after checking behind the house. Prompts the player with further\
+    '''
+    Continues the story for a player who chose to go back to the front
+    after checking behind the house. Prompts the player with further
     choices and returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You decide it is better to find another way.
@@ -687,11 +687,11 @@ What would you like to do?
 
 
 def story_enter_house_without_notice(name):
-    """
-    Continues the story for a player who chose to enter the house trying\
-    not to be noticed. Prompts the player with further choices and\
+    '''
+    Continues the story for a player who chose to enter the house trying
+    not to be noticed. Prompts the player with further choices and
     returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You quickly get inside before the giant can close the door again.
@@ -717,9 +717,9 @@ What would you like to do?
 
 
 def story_confront_giant(name):
-    """
+    '''
     Ends the game for the user that tried to confront the giant.
-    """
+    '''
 
     clear_console()
     print(f'''You yell out to the giant: "Hey, you giant! My name is {name},
@@ -731,11 +731,11 @@ END OF GAME''')
 
 
 def story_stare_at_giant(name):
-    """
-    Continues the story for a player who chose to stare at the giant\
-    that opened the door.Prompts the player with further choices and\
+    '''
+    Continues the story for a player who chose to stare at the giant
+    that opened the door.Prompts the player with further choices and
     returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''The giant man stands before you. He looks around confused and
@@ -752,11 +752,11 @@ What would you like to do?
 
 
 def story_climb_down(name):
-    """
-    Continues the story for a player who chose to climb down\
-    after entering the house through a window. Prompts the player\
+    '''
+    Continues the story for a player who chose to climb down
+    after entering the house through a window. Prompts the player
     with further choices and returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You are able to slide down a piece of wood to land on a giant
@@ -779,11 +779,11 @@ What would you like to do?
 
 
 def story_exit_window(name):
-    """
-    Continues the story for a player who chose to get out of the house\
-    the window they climbed to enter the house. Prompts the player\
+    '''
+    Continues the story for a player who chose to get out of the house
+    the window they climbed to enter the house. Prompts the player
     with further choices and returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You decide it is not a good idea to enter the house this way,
@@ -801,11 +801,11 @@ What would you like to do?
 
 
 def story_search_left_door(name):
-    """
-    Continues the story for a player who chose to check the left door\
-    of the hallway. Prompts the player with further choices and\
+    '''
+    Continues the story for a player who chose to check the left door
+    of the hallway. Prompts the player with further choices and
     returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You run towards the left door. You push it open. You find yourself
@@ -829,11 +829,11 @@ What would you like to do?
 
 
 def story_search_right_door(name):
-    """
-    Continues the story for a player who chose to check the right door\
-    of the hallway. Prompts the player with further choices and\
+    '''
+    Continues the story for a player who chose to check the right door
+    of the hallway. Prompts the player with further choices and
     returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You run towards the right door. You push it open. You find
@@ -850,11 +850,11 @@ What would you like to do?
 
 
 def story_go_down_hallway(name):
-    """
-    Continues the story for a player who chose to ignore the doors\
-    and go straight to the end of the hallway. Prompts the player with further\
+    '''
+    Continues the story for a player who chose to ignore the doors
+    and go straight to the end of the hallway. Prompts the player with further
     choices and returns the next segment of the story.
-    """
+    '''
 
     clear_console()
     print('''You run hugging the right wall towards the end of the hallway.
@@ -877,11 +877,11 @@ What would you like to do?
 
 
 def story_get_closer_to_girl(name):
-    """
-    Continues the story for a player who chose to get closer to the girl.\
-    Prompts the player with further choices and returns the next segment\
+    '''
+    Continues the story for a player who chose to get closer to the girl.
+    Prompts the player with further choices and returns the next segment
     of the story.
-    """
+    '''
 
     clear_console()
     print('''You quietly make your way towards the iron cage, carefully looking
@@ -903,9 +903,9 @@ What would you like to do?
 
 
 def story_run_towards_cage(name):
-    """
+    '''
     Ends the game for the user that tried to run recklessly towards the cage.
-    """
+    '''
 
     clear_console()
     print('''You run, but you make a little bit too much sound. Suddenly, while
@@ -916,11 +916,11 @@ END OF GAME''')
 
 
 def story_run_towards_hallway(name):
-    """
-    Continues the story for a player who chose to run towards the hallway.\
-    Prompts the player with further choices and returns the next segment\
+    '''
+    Continues the story for a player who chose to run towards the hallway.
+    Prompts the player with further choices and returns the next segment
     of the story.
-    """
+    '''
 
     clear_console()
     print('''You get to the hallway. You can see that there are three more
@@ -940,11 +940,11 @@ What would you like to do?
 
 
 def story_climb_bed(name):
-    """
-    Continues the story for a player who chose to climb on the giant bed.\
-    Prompts the player with further choices and returns the next segment\
+    '''
+    Continues the story for a player who chose to climb on the giant bed.
+    Prompts the player with further choices and returns the next segment
     of the story.
-    """
+    '''
 
     clear_console()
     print('''You manage to get on top of the bed. It's not that soft, so it's
