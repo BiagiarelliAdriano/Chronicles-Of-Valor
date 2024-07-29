@@ -687,7 +687,33 @@ What would you like to do?
 
 
 def story_enter_house_without_notice(name):
-    return None
+    """
+    Continues the story for a player who chose to enter the house trying\
+    not to be noticed. Prompts the player with further choices and\
+    returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You quickly get inside before the giant can close the door again.
+You run, hugging the side wall, when you reach a giant piece of wood,
+big enough for you to hide. You look up, and it looks like a giant table.
+You should be safe here. You hear the giant front door closing, and again
+footsteps. You look around. You are now in what appears to be a giant, cozy
+living room, next to a kitchen. The giant man sits down on a giant armchair
+and seems to be falling asleep. Looking at his feet, you can see another
+person. A small girl, locked inside what appears to be an iron cage. You can
+see to the side of the room that a hallway opens up to the rest of the house.
+What would you like to do?
+1. Get closer to the little girl.
+2. Run towards the cage.
+3. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_get_closer_to_girl'
+    elif choice == 2:
+        return 'story_run_towards_cage'
+    elif choice == 3:
+        return 'story_run_towards_hallway'
 
 
 def story_confront_giant(name):
@@ -715,6 +741,18 @@ def story_search_right_door(name):
 
 
 def story_go_down_hallway(name):
+    return None
+
+
+def story_get_closer_to_girl(name):
+    return None
+
+
+def story_run_towards_cage(name):
+    return None
+
+
+def story_run_towards_hallway(name):
     return None
 
 
@@ -751,7 +789,10 @@ story_segments = {
     'story_exit_window': story_exit_window,
     'story_search_left_door': story_search_left_door,
     'story_search_right_door': story_search_right_door,
-    'story_go_down_hallway': story_go_down_hallway
+    'story_go_down_hallway': story_go_down_hallway,
+    'story_get_closer_to_girl': story_get_closer_to_girl,
+    'story_run_towards_cage': story_run_towards_cage,
+    'story_run_towards_hallway': story_run_towards_hallway
 
 }
 
