@@ -626,7 +626,7 @@ def story_find_another_way(name):
     """
 
     clear_console()
-    print(''' You decide it's too risky to enter the house this way. You climb
+    print(''' You decide it is too risky to enter the house this way. You climb
 down the side of the house where you came from. You are now standing in front
 of the house.
 What would you like to do?
@@ -674,7 +674,7 @@ def story_go_back_to_front(name):
     """
 
     clear_console()
-    print('''You decide it's better to find another way.
+    print('''You decide it is better to find another way.
 You go back to the front of the house.
 What would you like to do?
 1. Knock on the front door.
@@ -723,7 +723,7 @@ def story_confront_giant(name):
 
     clear_console()
     print(f'''You yell out to the giant: "Hey, you giant! My name is {name},
-and I'm here to get back the little girl you kidnapped from the village
+and I am here to get back the little girl you kidnapped from the village
 nearby." The giant angrily looks down towards you. He brings up his giant
 foot and stomps on you.
 END OF GAME''')
@@ -762,7 +762,7 @@ def story_climb_down(name):
     print('''You are able to slide down a piece of wood to land on a giant
 dinner table. You are able to slide down the table and get at its feet. You are
 now hiding behind one of the legs. You look around. The giant man is still
-soundly sleeping on the armchair. The girl doesn't seem to notice your
+soundly sleeping on the armchair. The girl does not seem to notice your
 presence. You can now see that a hallway opens up on the other side of the
 room to the rest of the house.
 What would you like to do?
@@ -786,7 +786,7 @@ def story_exit_window(name):
     """
 
     clear_console()
-    print('''You decide it's not a good idea to enter the house this way,
+    print('''You decide it is not a good idea to enter the house this way,
 the giant might notice you if you get down. You exit through the window.
 You climb down the side of the house and you are back in front of the
 entry door.
@@ -940,7 +940,28 @@ What would you like to do?
 
 
 def story_climb_bed(name):
-    return None
+    """
+    Continues the story for a player who chose to climb on the giant bed.\
+    Prompts the player with further choices and returns the next segment\
+    of the story.
+    """
+
+    clear_console()
+    print('''You manage to get on top of the bed. It's not that soft, so it's
+not difficult for you to walk on. You look around. There is something shining
+on top of the bedside table. You get closer to take a better look. You can see
+a small pair of keys.
+What would you like to do?
+1. Climb the bedside table.
+2. Open the wardrobe.
+3. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_climb_bedside_table'
+    elif choice == 2:
+        return 'story_open_wardrobe'
+    elif choice == 3:
+        return 'story_go_back_to_hallway'
 
 
 def story_climb_bedside_table(name):
