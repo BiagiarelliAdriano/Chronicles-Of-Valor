@@ -667,7 +667,23 @@ What would you like to do?
 
 
 def story_go_back_to_front(name):
-    return None
+    """
+    Continues the story for a player who chose to go back to the front\
+    after checking behind the house. Prompts the player with further\
+    choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You decide it's better to find another way.
+You go back to the front of the house.
+What would you like to do?
+1. Knock on the front door.
+2. Climb the house.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_knock_on_door'
+    elif choice == 2:
+        return 'story_climb_house'
 
 
 def story_enter_house_without_notice(name):
