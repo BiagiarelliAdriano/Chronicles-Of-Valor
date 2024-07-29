@@ -829,11 +829,51 @@ What would you like to do?
 
 
 def story_search_right_door(name):
-    return None
+    """
+    Continues the story for a player who chose to check the right door\
+    of the hallway. Prompts the player with further choices and\
+    returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You run towards the right door. You push it open. You find
+yourself inside what appears to be a library. There are giant bookshelves all
+around the room, with a single side window on the wall in front of you.
+What would you like to do?
+1. Search for anything useful.
+2. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_search_anything_useful'
+    elif choice == 2:
+        return 'story_go_back_to_hallway'
 
 
 def story_go_down_hallway(name):
-    return None
+    """
+    Continues the story for a player who chose to ignore the doors\
+    and go straight to the end of the hallway. Prompts the player with further\
+    choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You run hugging the right wall towards the end of the hallway.
+As soon as you reach the end, you can now hear someone snoring very loudly.
+You look around. You see what appears to be a giant, cozy living room beside a
+kitchen. There is a giant man sleeping on an armchair in front of a fireplace.
+You look just around the corner. You can see an iron cage with someone inside.
+A little girl.
+What would you like to do?
+1. Get closer to the little girl.
+2. Run towards the cage.
+3. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_get_closer_to_girl'
+    elif choice == 2:
+        return 'story_run_towards_cage'
+    elif choice == 3:
+        return 'story_go_back_to_hallway'
 
 
 def story_get_closer_to_girl(name):
@@ -861,6 +901,10 @@ def story_open_wardrobe(name):
 
 
 def story_go_back_to_hallway(name):
+    return None
+
+
+def story_search_anything_useful(name):
     return None
 
 
@@ -904,7 +948,8 @@ story_segments = {
     'story_climb_bed': story_climb_bed,
     'story_climb_bedside_table': story_climb_bedside_table,
     'story_open_wardrobe': story_open_wardrobe,
-    'story_go_back_to_hallway': story_go_back_to_hallway
+    'story_go_back_to_hallway': story_go_back_to_hallway,
+    'story_search_anything_useful': story_search_anything_useful
 
 }
 
