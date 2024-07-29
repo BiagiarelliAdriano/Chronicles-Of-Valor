@@ -916,7 +916,27 @@ END OF GAME''')
 
 
 def story_run_towards_hallway(name):
-    return None
+    """
+    Continues the story for a player who chose to run towards the hallway.\
+    Prompts the player with further choices and returns the next segment\
+    of the story.
+    """
+
+    clear_console()
+    print('''You get to the hallway. You can see that there are three more
+doors. One to your right, one to your left, and one directly towards the end
+of the hallway.
+What would you like to do?
+1. Search the left door.
+2. Search the right door.
+3. Search the door at the end of the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_search_left_door'
+    elif choice == 2:
+        return 'story_search_right_door'
+    elif choice == 3:
+        return 'story_search_middle_door'
 
 
 def story_climb_bed(name):
@@ -944,6 +964,10 @@ def story_try_force_lock(name):
 
 
 def story_inspect_giant_for_keys(name):
+    return None
+
+
+def story_search_middle_door(name):
     return None
 
 
@@ -990,7 +1014,8 @@ story_segments = {
     'story_go_back_to_hallway': story_go_back_to_hallway,
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
-    'story_inspect_giant_for_keys': story_inspect_giant_for_keys
+    'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
+    'story_search_middle_door': story_search_middle_door
 
 }
 
