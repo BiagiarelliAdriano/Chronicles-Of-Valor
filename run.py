@@ -779,7 +779,25 @@ What would you like to do?
 
 
 def story_exit_window(name):
-    return None
+    """
+    Continues the story for a player who chose to get out of the house\
+    the window they climbed to enter the house. Prompts the player\
+    with further choices and returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You decide it's not a good idea to enter the house this way,
+the giant might notice you if you get down. You exit through the window.
+You climb down the side of the house and you are back in front of the
+entry door.
+What would you like to do?
+1. Knock on the front door.
+2. Find another way to get in from behind the house.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choicee == 1:
+        return 'story_kock_on_door'
+    elif choice == 2:
+        return 'story_check_behind_house'
 
 
 def story_search_left_door(name):
