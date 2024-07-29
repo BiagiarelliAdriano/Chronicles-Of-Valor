@@ -965,7 +965,27 @@ What would you like to do?
 
 
 def story_climb_bedside_table(name):
-    return None
+    '''
+    Continues the story for a player who chose to climb on the giant bedside
+    table. Prompts the player with further choices and returns the next
+    segment of the story.
+    '''
+
+    clear_console()
+    print('''You manage to get on top of the bedside table. There is not much
+on top of it, only a giant lamp, a giant glass of water, and a small pair of
+keys. They look like they would be able to open an iron cage.
+What would you like to do?
+1. Grab the keys and climb down.
+2. Open the wardrobe.
+3. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_grab_keys'
+    elif choice == 2:
+        return 'story_open_wardrobe'
+    elif choice == 3:
+        return 'story_go_back_to_hallway'
 
 
 def story_open_wardrobe(name):
@@ -989,6 +1009,10 @@ def story_inspect_giant_for_keys(name):
 
 
 def story_search_middle_door(name):
+    return None
+
+
+def story_grab_keys(name):
     return None
 
 
@@ -1036,7 +1060,8 @@ story_segments = {
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
-    'story_search_middle_door': story_search_middle_door
+    'story_search_middle_door': story_search_middle_door,
+    'story_grab_keys': story_grab_keys
 
 }
 
