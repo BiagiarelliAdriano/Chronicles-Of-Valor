@@ -722,14 +722,32 @@ def story_confront_giant(name):
     """
 
     clear_console()
-    print(f'''You yell out to the giant: "Hey, you giant! My name is {name}, and I'm here to get back the little girl you kidnapped from the village nearby."
-The giant angrily looks down towards you. He brings up his giant foot and stomps on you.
+    print(f'''You yell out to the giant: "Hey, you giant! My name is {name},
+and I'm here to get back the little girl you kidnapped from the village
+nearby." The giant angrily looks down towards you. He brings up his giant
+foot and stomps on you.
 END OF GAME''')
     return None
 
 
 def story_stare_at_giant(name):
-    return None
+    """
+    Continues the story for a player who chose to stare at the giant\
+    that opened the door.Prompts the player with further choices and\
+    returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''The giant man stands before you. He looks around confused and angry, before saying: "Mmmh, stupid kids, always playing pranks on us."
+He goes to close the door again.
+What would you like to do?
+1. Confront the giant.
+2. Enter the house without being noticed.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_confront_giant'
+    elif choice == 2:
+        return 'story_enter_house_without_notice'
 
 
 def story_climb_down(name):
