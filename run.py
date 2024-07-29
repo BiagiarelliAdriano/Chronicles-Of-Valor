@@ -877,7 +877,29 @@ What would you like to do?
 
 
 def story_get_closer_to_girl(name):
-    return None
+    """
+    Continues the story for a player who chose to get closer to the girl.\
+    Prompts the player with further choices and returns the next segment\
+    of the story.
+    """
+
+    clear_console()
+    print('''You quietly make your way towards the iron cage, carefully looking
+towards the giant man to see if he wakes up. You manage to get right next to
+the cage. You whisper to the little girl. She turns around and starts smiling
+very happily. You gesture to stay silent and go towards the door of the cage.
+There is a big lock on it.
+What would you like to do?
+1. Try to force the lock open.
+2. Inspect the giant man for the keys.
+3. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_try_force_lock'
+    elif choice == 2:
+        return 'story_inspect_giant_for_keys'
+    elif choice == 3:
+        return 'story_run_towards_hallway'
 
 
 def story_run_towards_cage(name):
@@ -905,6 +927,14 @@ def story_go_back_to_hallway(name):
 
 
 def story_search_anything_useful(name):
+    return None
+
+
+def story_try_force_lock(name):
+    return None
+
+
+def story_inspect_giant_for_keys(name):
     return None
 
 
@@ -949,7 +979,9 @@ story_segments = {
     'story_climb_bedside_table': story_climb_bedside_table,
     'story_open_wardrobe': story_open_wardrobe,
     'story_go_back_to_hallway': story_go_back_to_hallway,
-    'story_search_anything_useful': story_search_anything_useful
+    'story_search_anything_useful': story_search_anything_useful,
+    'story_try_force_lock': story_try_force_lock,
+    'story_inspect_giant_for_keys': story_inspect_giant_for_keys
 
 }
 
