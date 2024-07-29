@@ -903,6 +903,15 @@ What would you like to do?
 
 
 def story_run_towards_cage(name):
+    """
+    Ends the game for the user that tried to run recklessly towards the cage.
+    """
+
+    clear_console()
+    print('''You run, but you make a little bit too much sound. Suddenly, while
+you are running, everything gets darker, like if a giant foot just got on top
+of you. You look up. A giant foot stomps on you.
+END OF GAME''')
     return None
 
 
