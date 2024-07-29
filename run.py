@@ -801,7 +801,31 @@ What would you like to do?
 
 
 def story_search_left_door(name):
-    return None
+    """
+    Continues the story for a player who chose to check the left door\
+    of the hallway. Prompts the player with further choices and\
+    returns the next segment of the story.
+    """
+
+    clear_console()
+    print('''You run towards the left door. You push it open. You find yourself
+inside what appears to be a bedroom. There's a giant bed right in front of you,
+to its right you can see a bedside table and to the left of the room
+you can see a giant wardrobe.
+What would you like to do?
+1. Climb the bed.
+2. Climb the bedside table.
+3. Open the wardrobe.
+4. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3, 4])
+    if choice == 1:
+        return 'story_climb_bed'
+    elif choice == 2:
+        return 'story_climb_bedside_table'
+    elif choice == 3:
+        return 'story_open_wardrobe'
+    elif choice == 4:
+        return 'story_go_back_to_hallway'
 
 
 def story_search_right_door(name):
@@ -821,6 +845,22 @@ def story_run_towards_cage(name):
 
 
 def story_run_towards_hallway(name):
+    return None
+
+
+def story_climb_bed(name):
+    return None
+
+
+def story_climb_bedside_table(name):
+    return None
+
+
+def story_open_wardrobe(name):
+    return None
+
+
+def story_go_back_to_hallway(name):
     return None
 
 
@@ -860,7 +900,11 @@ story_segments = {
     'story_go_down_hallway': story_go_down_hallway,
     'story_get_closer_to_girl': story_get_closer_to_girl,
     'story_run_towards_cage': story_run_towards_cage,
-    'story_run_towards_hallway': story_run_towards_hallway
+    'story_run_towards_hallway': story_run_towards_hallway,
+    'story_climb_bed': story_climb_bed,
+    'story_climb_bedside_table': story_climb_bedside_table,
+    'story_open_wardrobe': story_open_wardrobe,
+    'story_go_back_to_hallway': story_go_back_to_hallway
 
 }
 
