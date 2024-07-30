@@ -1078,7 +1078,28 @@ What would you like to do?
 
 
 def story_inspect_giant_for_keys(name):
-    return None
+    '''
+    Continues the story for a player who chose to search the giant man hoping
+    to find the keys to the iron cage. Prompts the player with further choices
+    and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You get close to the giant and quietly get on one of the arms of
+the armchair. The giant man is now sleeping right in front of you. You look
+around its body. It is wearing a normal white shirt with leathery shorts.
+There are no pockets on his clothes. You can not see any key on him.
+What would you like to do?
+1. Jump on the giant man to look further.
+2. Try to force the lock open.
+3. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_jump_on_giant'
+    elif choice == 2:
+        return 'story_try_force_lock'
+    elif choice == 3:
+        return 'story_run_towards_hallway'
 
 
 def story_search_middle_door(name):
@@ -1094,6 +1115,10 @@ def story_drink_potion(name):
 
 
 def story_leave_potion(name):
+    return None
+
+
+def story_jump_on_giant(name):
     return None
 
 
