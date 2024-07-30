@@ -34,6 +34,12 @@ def get_valid_choice(prompt, valid_choices):
     error messages for invalid inputs.
     '''
 
+    if conditional_choices:
+        # Add conditional choices if their conditions are met
+        for condition, choice in conditional_choices:
+            if condition:
+                valid_choices.append(choice)
+
     while True:
         choice = input(prompt)
         if not choice.strip():
@@ -82,6 +88,12 @@ you to shape the story as you wish, so go ahead and choose your favorite!
     while True:
         choice = input('Input a number between 1 and 3:\n')
         if choice in ['1', '2', '3']:
+            if choice == 1:
+                game_state['fighter_class_chosen'] = True
+            elif choice == 2:
+                game_state['rogue_class_chosen'] = True
+            elif choice == 3:
+                game_state['wizard_class_chosen'] = True
             return choice
         else:
             print('Invalid choice. Please choose 1, 2, or 3.')
