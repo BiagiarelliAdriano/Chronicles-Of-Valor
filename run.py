@@ -1173,7 +1173,24 @@ Run the application again to play more.''')
 
 
 def story_leave_potion(name):
-    return None
+    '''
+    Continues the story for a player who chose to leave the potion without
+    drinking it. Prompts the player with further choices and returns the next
+    segment of the story.
+    '''
+
+    clear_console()
+    print('''You decide not to drink the weird looking potion. After searching
+for a bit more, you do not seem to find anything else in this room.
+You go back to the hallway.
+What would you like to do?
+1. Search the left door.
+2. Go down the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_search_left_door'
+    elif choice == 2:
+        return 'story_go_down_hallway'
 
 
 def story_jump_on_giant(name):
