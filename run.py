@@ -989,6 +989,18 @@ What would you like to do?
 
 
 def story_open_wardrobe(name):
+    '''
+    Ends the story for users who tried to open the wardrobe in the
+    giant bedroom.
+    '''
+
+    clear_console()
+    print('''You grab one of the wardrobe doors. You pull towards you and you
+manage to open it up. Inside is very dark, but after opening it a bit more,
+you can now see a lot of dirty clothes hanging on a wooden stick. Before you
+can close the door again, a giant pair of hands grab onto you and takes you
+inside the wardrobe. You are then immediately squished to death.
+END OF GAME''')
     return None
 
 
