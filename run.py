@@ -1143,6 +1143,32 @@ What would you like to do?
 
 
 def story_drink_potion(name):
+    '''
+    Ends the game for the user that decided to drink the potion of
+    invisibility. Good ending.
+    '''
+
+    clear_console()
+    print('''You grab the potion and take a sip of it. A very weird sensation
+runs down your spine. The liquid does not taste like anything, you just feel
+this liquid enter your body and go down your throat. You look around, and when
+you take a look at your hands, you do not see them. You are invisible.
+From here on, thanks to the invisibility, your missions is quite simple.
+You can go around the house without worrying about being seen. You check the
+left door and you are in a bedroom. On the bedside table you find some keys to
+open an iron cage. You go down the hallway and find the little girl locked
+inside an iron cage. You open it up and whisper to the girl: "Hey, I am here
+to save you, you do not need to worry anymore." You release her hands from some
+shackles and you stealthily walk outside the house, right before the
+invisibility effect wears off. After around a day of travel, you find your way
+back to Stillhollow and you reunite the little girl with her father.
+The man starts crying with happiness. He gives you a bag of gold to thank you
+for saving his daughter. Content with having done a good deed and surviving
+visiting the house of a giant, you venture off for more adventures.
+And they all lived happily ever after.
+YOU WON
+
+Run the application again to play more.''')
     return None
 
 
