@@ -5,6 +5,14 @@ import os
 # Global variables
 PROMPT = 'Enter the number of your choice:\n'
 
+# Define global state dictionary to keep track of user choices and conditions
+game_state = {
+    'fighter_class_chosen': False,
+    'rogue_class_chosen': False,
+    'wizard_class_chosen': False,
+    'grabbed_keys': False
+}
+
 
 def clear_console():
     '''
@@ -1257,7 +1265,8 @@ story_segments = {
     'story_search_middle_door': story_search_middle_door,
     'story_grab_keys': story_grab_keys,
     'story_drink_potion': story_drink_potion,
-    'story_leave_potion': story_leave_potion
+    'story_leave_potion': story_leave_potion,
+    'story_jump_on_giant': story_jump_on_giant
 
 }
 
