@@ -1194,6 +1194,19 @@ What would you like to do?
 
 
 def story_jump_on_giant(name):
+    '''
+    Ends the game for the user that tried to jump on the giant man
+    looking for the key.
+    '''
+
+    clear_console()
+    print('''You jump on the giant man body. You bounce a little on the
+large belly. Looking towards the face of the giant, he does not seem
+to wake up. You start moving going towards the pants to see if you missed
+something, but as you start moving, the giant yawns and you are not quick
+enough to dodge the giant hand coming towards you. He grabs you, and without
+escape he rolls on the side and you suffocate.
+END OF GAME''')
     return None
 
 
