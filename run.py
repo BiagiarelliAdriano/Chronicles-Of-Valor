@@ -1124,7 +1124,22 @@ What would you like to do?
 
 
 def story_grab_keys(name):
-    return None
+    '''
+    Continues the story for a player who chose to grab the keys that were on
+    top of the bedside table. Prompts the player with further choices and
+    returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You get the keys and you quickly climb down the table.
+What would you like to do?
+1. Open the wardrobe.
+2. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_open_wardrobe'
+    elif choice == 2:
+        return 'story_go_back_to_hallway'
 
 
 def story_drink_potion(name):
