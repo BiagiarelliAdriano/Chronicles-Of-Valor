@@ -1103,7 +1103,24 @@ What would you like to do?
 
 
 def story_search_middle_door(name):
-    return None
+    '''
+    Continues the story for a player who chose to search the door down the
+    hallway. Prompts the player with further choices and returns the next
+    segment of the story.
+    '''
+
+    clear_console()
+    print('''You run at the end of the hallway, skipping the two rooms on the
+side. You pull with all your forces and you manage to squeeze out of the door.
+You are now outside, at the back of the house.
+What would you like to do?
+1. Go back inside.
+2. Run in front of the house.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_open_back_door'
+    elif choice == 2:
+        return 'story_go_back_to_front'
 
 
 def story_grab_keys(name):
