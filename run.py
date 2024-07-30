@@ -1031,7 +1031,25 @@ What would you like to do?
 
 
 def story_search_anything_useful(name):
-    return None
+    '''
+    Continues the story for a player who chose to search the right room for anything useful. 
+    Prompts the player with further choices and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You walk around, looking at the different books here and there. After searching for a couple of minutes, you notice something shining in between two books.
+You get closer. You move away the two books to make some space and you reveal what appears to be some kind of potion with a weird, almost transparent liquid in it.
+What would you like to do?
+1. Drink it.
+2. Leave it.
+3. Go back to the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_drink_potion'
+    elif choice == 2:
+        return 'story_leave_potion'
+    elif choice == 3:
+        return 'story_go_back_to_hallway'
 
 
 def story_try_force_lock(name):
@@ -1049,6 +1067,13 @@ def story_search_middle_door(name):
 def story_grab_keys(name):
     return None
 
+
+def story_drink_potion(name):
+    return None
+
+
+def story_leave_potion(name):
+    return None
 
 story_segments = {
     'story_start': story_start,
@@ -1095,7 +1120,9 @@ story_segments = {
     'story_try_force_lock': story_try_force_lock,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
     'story_search_middle_door': story_search_middle_door,
-    'story_grab_keys': story_grab_keys
+    'story_grab_keys': story_grab_keys,
+    'story_drink_potion': story_drink_potion,
+    'story_leave_potion': story_leave_potion
 
 }
 
