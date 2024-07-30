@@ -5,6 +5,7 @@ import os
 # Global variables
 PROMPT = 'Enter the number of your choice:\n'
 
+
 # Define global state dictionary to keep track of user choices and conditions
 game_state = {
     'fighter_class_chosen': False,
@@ -913,13 +914,24 @@ What would you like to do?
 1. Try to force the lock open.
 2. Inspect the giant man for the keys.
 3. Run towards the hallway.''')
-    choice = get_valid_choice(PROMPT, [1, 2, 3])
+
+    valid_choices = [1, 2, 3]
+
+    # Check if the player has grabbed the keys
+    if game_state.get('grabbed_keys', False):
+        print('4. Open the cage with the keys.')
+        valid_choices.append(4)
+    
+
+    choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
         return 'story_try_force_lock'
     elif choice == 2:
         return 'story_inspect_giant_for_keys'
     elif choice == 3:
         return 'story_run_towards_hallway'
+    elif choice == 4:
+        return 'story_open_cage_with_keys'
 
 
 def story_run_towards_cage(name):
@@ -1001,6 +1013,7 @@ What would you like to do?
 3. Go back to the hallway.''')
     choice = get_valid_choice(PROMPT, [1, 2, 3])
     if choice == 1:
+        game_state['grabbed_keys'] = True
         return 'story_grab_keys'
     elif choice == 2:
         return 'story_open_wardrobe'
