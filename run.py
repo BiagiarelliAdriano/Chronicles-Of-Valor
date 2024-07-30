@@ -1005,7 +1005,29 @@ END OF GAME''')
 
 
 def story_go_back_to_hallway(name):
-    return None
+    '''
+    Continues the story for a player who chose to go back to the hallway,
+    either after exploring one of the two rooms, or checking out the main room
+    in front of the house. Prompts the player with further choices and returns
+    the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You are back at the hallway.
+What would you like to do?
+1. Search the left door.
+2. Search the right door.
+3. Search the door at the end of the hallway.
+4. Go down the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3, 4])
+    if choice == 1:
+        return 'story_search_left_door'
+    elif choice == 2:
+        return 'story_search_right_door'
+    elif choice == 3:
+        return 'story_search_middle_door'
+    elif choice == 4:
+        return 'story_go_down_hallway'
 
 
 def story_search_anything_useful(name):
