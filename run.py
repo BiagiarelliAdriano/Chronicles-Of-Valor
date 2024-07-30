@@ -5,6 +5,7 @@ import os
 # Global variables
 PROMPT = 'Enter the number of your choice:\n'
 
+conditional_choices = []
 
 # Define global state dictionary to keep track of user choices and conditions
 game_state = {
