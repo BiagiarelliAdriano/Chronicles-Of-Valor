@@ -1032,13 +1032,17 @@ What would you like to do?
 
 def story_search_anything_useful(name):
     '''
-    Continues the story for a player who chose to search the right room for anything useful. 
-    Prompts the player with further choices and returns the next segment of the story.
+    Continues the story for a player who chose to search the right room for
+    anything useful. Prompts the player with further choices and returns the
+    next segment of the story.
     '''
 
     clear_console()
-    print('''You walk around, looking at the different books here and there. After searching for a couple of minutes, you notice something shining in between two books.
-You get closer. You move away the two books to make some space and you reveal what appears to be some kind of potion with a weird, almost transparent liquid in it.
+    print('''You walk around, looking at the different books here and there.
+After searching for a couple of minutes, you notice something shining
+in between two books. You get closer. You move away the two books to make some
+space and you reveal what appears to be some kind of potion with a weird,
+almost transparent liquid in it.
 What would you like to do?
 1. Drink it.
 2. Leave it.
@@ -1053,7 +1057,24 @@ What would you like to do?
 
 
 def story_try_force_lock(name):
-    return None
+    '''
+    Continues the story for a player who chose to try to force and destroy the
+    lock of the cage. Prompts the player with further choices and returns the
+    next segment of the story.
+    '''
+
+    clear_console()
+    print('''You try pulling the lock. You give it some solid punches and pull
+it from the sides, but unfortunately, you are not strong enough to pry it open
+with your bare hands.
+What would you like to do?
+1. Inspect the giant man for the keys.
+2. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_inspect_giant_for_keys'
+    elif choice == 2:
+        return 'story_run_towards_hallway'
 
 
 def story_inspect_giant_for_keys(name):
@@ -1074,6 +1095,7 @@ def story_drink_potion(name):
 
 def story_leave_potion(name):
     return None
+
 
 story_segments = {
     'story_start': story_start,
