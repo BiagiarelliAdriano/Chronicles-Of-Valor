@@ -90,11 +90,11 @@ you to shape the story as you wish, so go ahead and choose your favorite!
     while True:
         choice = input('Input a number between 1 and 3:\n')
         if choice in ['1', '2', '3']:
-            if choice == 1:
+            if choice == '1':
                 game_state['fighter_class_chosen'] = True
-            elif choice == 2:
+            elif choice == '2':
                 game_state['rogue_class_chosen'] = True
-            elif choice == 3:
+            elif choice == '3':
                 game_state['wizard_class_chosen'] = True
             return choice
         else:
@@ -217,10 +217,10 @@ What would you like to do?
 1. Rest and wait for the day after.
 2. Climb the giant beanstalk right away.''')
 
-    valid_choices = [1, 2, 3]
+    valid_choices = [1, 2]
 
     if game_state.get('wizard_class_chosen', False):
-        print('3. Cast Leomund Tiny Hut to be safe during the night.')
+        print('3. Rest and cast Leomund Tiny Hut to be safe during the night.')
         valid_choices.append(3)
 
     choice = get_valid_choice(PROMPT, valid_choices)
