@@ -184,7 +184,7 @@ What would you like to do?
         return 'story_try_to_ignore_the_man'
 
 
-def story_help_poor_man(name):
+def story_help_poor_man(name, player_class):
     '''
     Continues the story for a player who chose to help the man.
     Prompts the player with further choices and returns the next segment
@@ -208,7 +208,7 @@ What would you like to do?
         return 'story_walk_away'
 
 
-def story_ask_first(name):
+def story_ask_first(name, player_class):
     '''
     Continues the story for a player who chose to ask about the situation
     first. Prompts the player with further choices and returns the next
@@ -232,7 +232,7 @@ What would you like to do?
         return 'story_walk_away'
 
 
-def story_try_to_ignore_the_man(name):
+def story_try_to_ignore_the_man(name, player_class):
     '''
     Ends the story for a player who chose to ignore the man.
     '''
@@ -246,7 +246,7 @@ END OF GAME''')
     return None
 
 
-def story_accept_quest(name):
+def story_accept_quest(name, player_class):
     '''
     Continues the story for a player who chose to accept the man's quest.
     Prompts the player with further choices and returns the next segment
@@ -278,7 +278,7 @@ What would you like to do?
         return 'story_wizard_tiny_hut'
 
 
-def story_wizard_tiny_hut(name):
+def story_wizard_tiny_hut(name, player_class):
     '''
     Continues the story for a player who chose the wizard class and now can
     cast Leomund's Tiny Hut to take shelter. Prompts the player with further
@@ -310,7 +310,7 @@ What would you like to do?
         return 'story_climb_giant_stairs'
 
 
-def story_walk_away(name):
+def story_walk_away(name, player_class):
     '''
     Ends the game for the player who chose to walk away from the man after
     hearing their request.
@@ -325,7 +325,7 @@ END OF GAME''')
     return None
 
 
-def story_rest_and_wait(name):
+def story_rest_and_wait(name, player_class):
     '''
     Continues the story for a player who chose to rest before climbing
     the giant beanstalk. Prompts the player with further choices and returns
@@ -354,7 +354,7 @@ What would you like to do?
         return 'story_climb_giant_stairs'
 
 
-def story_climb_right_away(name):
+def story_climb_right_away(name, player_class):
     '''
     Continues the story for a player who chose to climb the giant beanstalk
     right away. Prompts the player with further choices and returns the next
@@ -378,7 +378,7 @@ What would you like to do?
         return 'story_wait_for_morning'
 
 
-def story_continue_climb(name):
+def story_continue_climb(name, player_class):
     '''
     Ends the story for a player who chose to continue the climb of the
     giant beanstalk during the night.
@@ -394,7 +394,7 @@ END OF GAME''')
     return None
 
 
-def story_wait_for_morning(name):
+def story_wait_for_morning(name, player_class):
     '''
     Continues the story for a player who chose to rest and wait for the
     following morning the continue the climb. Prompts the player with further
@@ -422,7 +422,7 @@ What would you like to do?
         return 'story_climb_giant_stairs'
 
 
-def story_climb_normal_stairs(name):
+def story_climb_normal_stairs(name, player_class):
     '''
     Continues the story for a player who chose to climb the normal sized
     stairs. Prompts the player with further choices and returns the next
@@ -450,7 +450,7 @@ What would you like to do?
         return 'story_climb_gate'
 
 
-def story_climb_giant_stairs(name):
+def story_climb_giant_stairs(name, player_class):
     '''
     Continues the story for a player who chose to climb the giant stairs.
     Prompts the player with further choices and returns the next segment of
@@ -484,7 +484,7 @@ What would you like to do?
         return 'story_climb_gate'
 
 
-def story_open_gate(name):
+def story_open_gate(name, player_class):
     '''
     Continues the story for a player who chose to push the gate open.
     Prompts the player with further choices and returns the next segment of
@@ -514,7 +514,7 @@ What would you like to do?
         return 'story_check_behind_house'
 
 
-def story_call_out(name):
+def story_call_out(name, player_class):
     '''
     Continues the story for a player who chose to call out for someone to open
     the gate. Prompts the player with further choices and returns the next
@@ -533,7 +533,7 @@ What would you like to do?
         return 'story_climb_gate'
 
 
-def story_climb_gate(name):
+def story_climb_gate(name, player_class):
     '''
     Continues the story for a player who chose to climb the gate.
     Prompts the player with further choices and returns the next segment of
@@ -564,7 +564,7 @@ What would you like to do?
         return 'story_check_behind_house'
 
 
-def story_rest_before_gate(name):
+def story_rest_before_gate(name, player_class):
     '''
     Continues the story for a player who chose to rest before doing anything
     with the gate. Prompts the player with further choices and returns the
@@ -589,7 +589,7 @@ What would you like to do?
         return 'story_check_behind_house'
 
 
-def story_knock_on_door(name):
+def story_knock_on_door(name, player_class):
     '''
     Continues the story for a player who chose to knock on the front door of
     the house. Prompts the player with further choices and returns the next
@@ -603,14 +603,20 @@ towards the door.
 What would you like to do?
 1. Hide next to the door.
 2. Wait until the door opens.''')
+
+    outcome = random_outcome(player_class, 'hiding')
+
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
-        return 'story_hide_next_to_door'
+        if outcome == 'negative':
+            return 'story_failed_to_hide'
+        else:
+            return 'story_successfully_hidden'
     elif choice == 2:
         return 'story_wait_for_door_open'
 
 
-def story_climb_house(name):
+def story_climb_house(name, player_class):
     '''
     Continues the story for a player who chose to climb a side of the house.
     Prompts the player with further choices and returns the next segment of
@@ -635,7 +641,7 @@ What would you like to do?
         return 'story_find_another_way'
 
 
-def story_check_behind_house(name):
+def story_check_behind_house(name, player_class):
     '''
     Continues the story for a player who chose to check behind the house.
     Prompts the player with further choices and returns the next segment of
@@ -655,7 +661,23 @@ What would you like to do?
         return 'story_go_back_to_front'
 
 
-def story_hide_next_to_door(name):
+def story_failed_to_hide(name, player_class):
+    '''
+    Ends the game for the player who failed to hide next to the door from the giant.
+    '''
+
+    clear_console()
+    print('''You quickly escape and put your back to the side of the wall,
+right next to the door. You wait. The giant steps get nearer. The door
+starts to open, and you wait with your eyes close and holding your breath, hoping
+the giant will not see you or hear you. You wait for a bit, and when you open
+your eyes and look up, a see a giant angry face staring at you. The giant man then
+proceeds to stomp on you.
+END OF GAME''')
+    return None
+
+
+def story_successfully_hidden(name, player_class):
     '''
     Continues the story for a player who chose to hide next to the door when
     the giant opens it. Prompts the player with further choices and returns
@@ -678,7 +700,7 @@ What would you like to do?
         return 'story_confront_giant'
 
 
-def story_wait_for_door_open(name):
+def story_wait_for_door_open(name, player_class):
     '''
     Continues the story for a player who chose to wait for the front door
     to open. Prompts the player with further choices and returns the next
@@ -705,7 +727,7 @@ What would you like to do?
         return 'story_enter_house_without_notice'
 
 
-def story_climb_inside_window(name):
+def story_climb_inside_window(name, player_class):
     '''
     Continues the story for a player who chose to climb inside the
     window. Prompts the player with further choices and returns the next
@@ -727,7 +749,7 @@ What would you like to do?
         return 'story_exit_window'
 
 
-def story_find_another_way(name):
+def story_find_another_way(name, player_class):
     '''
     Continues the story for a player who chose to find another way.
     Prompts the player with further choices and returns the next
@@ -748,7 +770,7 @@ What would you like to do?
         return 'story_check_behind_house'
 
 
-def story_open_back_door(name):
+def story_open_back_door(name, player_class):
     '''
     Continues the story for a player who chose to open the back door.
     Prompts the player with further choices and returns the next
@@ -775,7 +797,7 @@ What would you like to do?
         return 'story_go_down_hallway'
 
 
-def story_go_back_to_front(name):
+def story_go_back_to_front(name, player_class):
     '''
     Continues the story for a player who chose to go back to the front
     after checking behind the house. Prompts the player with further
@@ -795,7 +817,7 @@ What would you like to do?
         return 'story_climb_house'
 
 
-def story_enter_house_without_notice(name):
+def story_enter_house_without_notice(name, player_class):
     '''
     Continues the story for a player who chose to enter the house trying
     not to be noticed. Prompts the player with further choices and
@@ -825,7 +847,7 @@ What would you like to do?
         return 'story_run_towards_hallway'
 
 
-def story_confront_giant(name):
+def story_confront_giant(name, player_class):
     '''
     Ends the game for the user that tried to confront the giant.
     '''
@@ -839,7 +861,7 @@ END OF GAME''')
     return None
 
 
-def story_stare_at_giant(name):
+def story_stare_at_giant(name, player_class):
     '''
     Continues the story for a player who chose to stare at the giant
     that opened the door.Prompts the player with further choices and
@@ -860,7 +882,7 @@ What would you like to do?
         return 'story_enter_house_without_notice'
 
 
-def story_climb_down(name):
+def story_climb_down(name, player_class):
     '''
     Continues the story for a player who chose to climb down
     after entering the house through a window. Prompts the player
@@ -887,7 +909,7 @@ What would you like to do?
         return 'story_run_towards_hallway'
 
 
-def story_exit_window(name):
+def story_exit_window(name, player_class):
     '''
     Continues the story for a player who chose to get out of the house
     the window they climbed to enter the house. Prompts the player
@@ -909,7 +931,7 @@ What would you like to do?
         return 'story_check_behind_house'
 
 
-def story_search_left_door(name):
+def story_search_left_door(name, player_class):
     '''
     Continues the story for a player who chose to check the left door
     of the hallway. Prompts the player with further choices and
@@ -937,7 +959,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_search_right_door(name):
+def story_search_right_door(name, player_class):
     '''
     Continues the story for a player who chose to check the right door
     of the hallway. Prompts the player with further choices and
@@ -958,7 +980,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_go_down_hallway(name):
+def story_go_down_hallway(name, player_class):
     '''
     Continues the story for a player who chose to ignore the doors
     and go straight to the end of the hallway. Prompts the player with further
@@ -985,7 +1007,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_get_closer_to_girl(name):
+def story_get_closer_to_girl(name, player_class):
     '''
     Continues the story for a player who chose to get closer to the girl.
     Prompts the player with further choices and returns the next segment
@@ -1021,7 +1043,7 @@ What would you like to do?
         return 'story_open_cage_with_keys'
 
 
-def story_run_towards_cage(name):
+def story_run_towards_cage(name, player_class):
     '''
     Ends the game for the user that tried to run recklessly towards the cage.
     '''
@@ -1034,7 +1056,7 @@ END OF GAME''')
     return None
 
 
-def story_run_towards_hallway(name):
+def story_run_towards_hallway(name, player_class):
     '''
     Continues the story for a player who chose to run towards the hallway.
     Prompts the player with further choices and returns the next segment
@@ -1058,7 +1080,7 @@ What would you like to do?
         return 'story_search_middle_door'
 
 
-def story_climb_bed(name):
+def story_climb_bed(name, player_class):
     '''
     Continues the story for a player who chose to climb on the giant bed.
     Prompts the player with further choices and returns the next segment
@@ -1083,7 +1105,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_climb_bedside_table(name):
+def story_climb_bedside_table(name, player_class):
     '''
     Continues the story for a player who chose to climb on the giant bedside
     table. Prompts the player with further choices and returns the next
@@ -1108,7 +1130,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_open_wardrobe(name):
+def story_open_wardrobe(name, player_class):
     '''
     Ends the story for users who tried to open the wardrobe in the
     giant bedroom.
@@ -1124,7 +1146,7 @@ END OF GAME''')
     return None
 
 
-def story_go_back_to_hallway(name):
+def story_go_back_to_hallway(name, player_class):
     '''
     Continues the story for a player who chose to go back to the hallway,
     either after exploring one of the two rooms, or checking out the main room
@@ -1150,7 +1172,7 @@ What would you like to do?
         return 'story_go_down_hallway'
 
 
-def story_search_anything_useful(name):
+def story_search_anything_useful(name, player_class):
     '''
     Continues the story for a player who chose to search the right room for
     anything useful. Prompts the player with further choices and returns the
@@ -1176,7 +1198,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_try_force_lock(name):
+def story_try_force_lock(name, player_class):
     '''
     Continues the story for a player who chose to try to force and destroy the
     lock of the cage. Prompts the player with further choices and returns the
@@ -1197,7 +1219,7 @@ What would you like to do?
         return 'story_run_towards_hallway'
 
 
-def story_inspect_giant_for_keys(name):
+def story_inspect_giant_for_keys(name, player_class):
     '''
     Continues the story for a player who chose to search the giant man hoping
     to find the keys to the iron cage. Prompts the player with further choices
@@ -1222,7 +1244,7 @@ What would you like to do?
         return 'story_run_towards_hallway'
 
 
-def story_search_middle_door(name):
+def story_search_middle_door(name, player_class):
     '''
     Continues the story for a player who chose to search the door down the
     hallway. Prompts the player with further choices and returns the next
@@ -1243,7 +1265,7 @@ What would you like to do?
         return 'story_go_back_to_front'
 
 
-def story_grab_keys(name):
+def story_grab_keys(name, player_class):
     '''
     Continues the story for a player who chose to grab the keys that were on
     top of the bedside table. Prompts the player with further choices and
@@ -1262,7 +1284,7 @@ What would you like to do?
         return 'story_go_back_to_hallway'
 
 
-def story_drink_potion(name):
+def story_drink_potion(name, player_class):
     '''
     Ends the game for the user that decided to drink the potion of
     invisibility. Good ending.
@@ -1292,7 +1314,7 @@ Run the application again to play more.''')
     return None
 
 
-def story_leave_potion(name):
+def story_leave_potion(name, player_class):
     '''
     Continues the story for a player who chose to leave the potion without
     drinking it. Prompts the player with further choices and returns the next
@@ -1313,7 +1335,7 @@ What would you like to do?
         return 'story_go_down_hallway'
 
 
-def story_jump_on_giant(name):
+def story_jump_on_giant(name, player_class):
     '''
     Ends the game for the user that tried to jump on the giant man
     looking for the key.
@@ -1351,7 +1373,8 @@ story_segments = {
     'story_knock_on_door': story_knock_on_door,
     'story_climb_house': story_climb_house,
     'story_check_behind_house': story_check_behind_house,
-    'story_hide_next_to_door': story_hide_next_to_door,
+    'story_failed_to_hide': story_failed_to_hide,
+    'story_successfully_hidden': story_successfully_hidden,
     'story_wait_for_door_open': story_wait_for_door_open,
     'story_climb_inside_window': story_climb_inside_window,
     'story_find_another_way': story_find_another_way,
@@ -1389,7 +1412,7 @@ def main():
     player_class = choose_class(name)
     current_story = story_start(name, player_class)
     while current_story:
-        current_story = story_segments[current_story](name)
+        current_story = story_segments[current_story](name, player_class)
 
 
 if __name__ == '__main__':
