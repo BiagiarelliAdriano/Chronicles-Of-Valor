@@ -1,5 +1,6 @@
 # Import statements
 import os
+import random
 
 
 # Global variables
@@ -53,6 +54,47 @@ def get_valid_choice(prompt, valid_choices):
                   f'{", ".join(map(str, valid_choices))}.')
         else:
             return int(choice)
+
+
+def random_outcome(player_class, situation, default_negative_range=(1, 9), default_positive_range=(10, 20)):
+    ''' 
+    Generates a random outcome based on the player's class and situation.
+    Returns negative or positive outcome based on the random number.
+    Introduces different ranges for negative and positive outcomes based on the situations
+    and player class.
+    '''
+
+    negative_range = default_negative_range
+    positive_range = default_positive_range
+
+    # Customize ranges based on class and situation
+    if player_class == 'rogue' and situation == 'hiding':
+        negative_range = (1, 5)
+        positive_range = (6, 20)
+    elif player_class == 'fighter' and situation == 'climbing':
+        negative_range = (1, 7)
+        positive_range = (8, 20)
+    elif player_class == 'wizard' and situation == 'charming':
+        negative_range == (1, 5)
+        positive_range == (6, 20)
+    elif player_class == 'fighter' and situation == 'breaking':
+        negative_range == (1, 5)
+        positive_range == (6, 20)
+    elif player_class == 'rogue' and situation == 'lock picking':
+        negative_range = (1, 3)
+        positive_range = (4, 20)
+    elif player_class == 'wizard' and siutation == 'inspecting':
+        negative_range = (1, 7)
+        positive_range = (8, 20)
+
+    # Generate a random number
+    random_number = random.randint(1, 20)
+
+    # Determine outcome based on random number
+    if negative_range[0] <= random_number <= negative_range[1]:
+        return 'negative'
+    else:
+        return 'positive'
 
 
 def introduction():
