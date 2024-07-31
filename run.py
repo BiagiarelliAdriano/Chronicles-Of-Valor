@@ -216,11 +216,52 @@ will be a very long climb.
 What would you like to do?
 1. Rest and wait for the day after.
 2. Climb the giant beanstalk right away.''')
-    choice = get_valid_choice(PROMPT, [1, 2])
+
+    valid_choices = [1, 2, 3]
+
+    if game_state.get('wizard_class_chosen', False):
+        print('3. Cast Leomund Tiny Hut to be safe during the night.')
+        valid_choices.append(3)
+
+    choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
         return 'story_rest_and_wait'
     elif choice == 2:
         return 'story_climb_right_away'
+    elif choice == 3:
+        return 'story_wizard_tiny_hut'
+
+
+def story_wizard_tiny_hut(name):
+    '''
+    Continues the story for a player who chose the wizard class and now can
+    cast Leomund's Tiny Hut to take shelter. Prompts the player with further
+    choices and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You prepare a good place to cast the spell. It takes about
+1 minute, but then a 10-foot-radius immobile dome of force springs into
+existence around and above you and remains stationary. It immediately gets to
+a cool temperature around you and you know that now nothing can see you from
+outside and nothing magical can even pass through. You set up your tent and
+rest easily for the night. The following morning you wake up to the low light
+of the sun rising from the horizon, you dispell the Tiny Hut and you are
+readier than ever to take on the climb. You start going up, easily inserting
+your fingers in the plant to grab on to and climb. After a while, you reach
+the clouds. It gets harder to climb while you cannot see all around you, but
+you manage to continue on. Finally, the clouds clear up and you get to the end
+of the beanstalk. You get up to a giant platform built in what appears to be
+smooth stone. You can now see two sets of stone stairs that go even above the
+clouds. One has steps of your size, the other has giant steps.
+What would you like to do?
+1. Take the stairs of your size.
+2. Take the giant stairs.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_climb_normal_stairs'
+    elif choice == 2:
+        return 'story_climb_giant_stairs'
 
 
 def story_walk_away(name):
@@ -922,7 +963,6 @@ What would you like to do?
     if game_state.get('grabbed_keys', False):
         print('4. Open the cage with the keys.')
         valid_choices.append(4)
-    
 
     choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
@@ -1253,6 +1293,7 @@ story_segments = {
     'story_walk_away': story_walk_away,
     'story_rest_and_wait': story_rest_and_wait,
     'story_climb_right_away': story_climb_right_away,
+    'story_wizard_tiny_hut': story_wizard_tiny_hut,
     'story_climb_normal_stairs': story_climb_normal_stairs,
     'story_climb_giant_stairs': story_climb_giant_stairs,
     'story_continue_climb': story_continue_climb,
