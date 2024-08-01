@@ -86,15 +86,24 @@ def random_outcome(player_class, game_state, situation, default_negative_range=(
             return 'negative'
         negative_range == (1, 13)
         positive_range == (14, 20)
-    elif player_class == 'fighter' and situation == 'breaking':
-        negative_range == (1, 5)
-        positive_range == (6, 20)
-    elif player_class == 'rogue' and situation == 'lock picking':
-        negative_range = (1, 3)
-        positive_range = (4, 20)
-    elif player_class == 'wizard' and situation == 'inspecting':
-        negative_range = (1, 7)
-        positive_range = (8, 20)
+    elif situation == 'breaking':
+        if game_state.get('fighter_class_chosen', False):
+            negative_range == (1, 5)
+            positive_range == (6, 20)
+        else:
+            return 'negative'
+    elif situation == 'lock picking':
+        if game_state.get('rogue_class_chosen', False):
+            negative_range = (1, 3)
+            positive_range = (4, 20)
+        else:
+            return 'negative'
+    elif situation == 'inspecting':
+        if game_state.get('wizard_class_chosen', False):
+            negative_range = (1, 7)
+            positive_range = (8, 20)
+        else:
+            return 'negative'
     elif player_class == 'rogue' and situation == 'stealth':
         negative_range = (1, 5)
         positive_range = (6, 20)
@@ -1200,15 +1209,50 @@ What would you like to do?
         print('4. Open the cage with the keys.')
         valid_choices.append(4)
 
+    outcome = random_outcome(player_class, game_state, 'breaking')
+
     choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
-        return 'story_try_force_lock'
+        if outcome == 'negative':
+            return 'story_try_force_lock'
+        else:
+            return 'story_break_lock'
     elif choice == 2:
         return 'story_inspect_giant_for_keys'
     elif choice == 3:
         return 'story_run_towards_hallway'
     elif choice == 4:
         return 'story_open_cage_with_keys'
+
+
+def story_break_lock(name, player_class, game_state):
+    '''
+    Continues the story for a player who chose to destroy the lock of the iron cage
+    where the little girl is kept. Prompts the player with further choices and
+    returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''Thanks to your herculean strenght, you are able to grab onto the lock, pull it open and completely break it. After that, you can simply open the cage.
+You get closer to the girl, who just looks at you with a worried expression. You reassure her, but you notice that she is also being kept with some shackles on her hands.
+They also have a place for a key in them.
+What would you like to do?
+1. Break the shackles.
+2. Inspect the giant man for keys.
+3. Run towards the hallway.''')
+
+    outcome = random_outcome(player_class, game_state, 'breaking')
+
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        if outcome == 'negative':
+            return 'story_fail_to_break_shackles'
+        else:
+            return 'story_break_shackles'
+    elif choise == 2:
+        return 'story_inspect_giant_for_keys'
+    elif choice == 3:
+        return 'story_run_towards_hallway'
 
 
 def story_run_towards_cage(name, player_class, game_state):
@@ -1403,11 +1447,17 @@ What would you like to do?
 1. Jump on the giant man to look further.
 2. Try to force the lock open.
 3. Run towards the hallway.''')
+
+    outcome = random_outcome(player_class, game_state, 'breaking')
+
     choice = get_valid_choice(PROMPT, [1, 2, 3])
     if choice == 1:
         return 'story_jump_on_giant'
     elif choice == 2:
-        return 'story_try_force_lock'
+        if outcome == 'negative':
+            return 'story_try_force_lock'
+        else:
+            return 'story_break_lock'
     elif choice == 3:
         return 'story_run_towards_hallway'
 
@@ -1570,6 +1620,7 @@ story_segments = {
     'story_go_back_to_hallway': story_go_back_to_hallway,
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
+    'story_break_lock': story_break_lock,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
     'story_search_middle_door': story_search_middle_door,
     'story_grab_keys': story_grab_keys,
