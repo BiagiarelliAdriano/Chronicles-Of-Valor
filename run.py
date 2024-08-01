@@ -1245,7 +1245,7 @@ def story_failed_lock_pick(name, player_class, game_state):
     '''
 
     clear_console()
-    print('''You take out your lock picking tools and you starting working.
+    print('''You take out your lock picking tools and you start working.
 You are very close to succeed, when your tool breaks. Cursing, you look around,
 the giant man is still sleeping.
 What would you like to do?
@@ -1259,6 +1259,18 @@ What would you like to do?
 
 
 def story_successful_lock_pick(name, player_class, game_state):
+    '''
+    Ends the game for the player chose to open the lock by picking it and
+    successfully doing so, did not notice the giant man behind them.
+    '''
+
+    clear_console()
+    print('''You take out your lock picking tools and you start working.
+You are very close to succeed, you know it. You are focusing and sweating.
+It is almost there. You are focusing. You are focusing too much.
+You are focusing so much that you do not notice the giant man standing
+behind you. You turn around. Black.
+END OF GAME''')
     return None
 
 
