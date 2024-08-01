@@ -987,6 +987,29 @@ Run the application again to play more.''')
     return None
 
 
+def story_take_girl_excuse_leave(name, player_class):
+    '''
+    Ends the story for a player who chose to not trust the words of the giant
+    and excuse themselves to save the little girl.
+    '''
+
+    clear_console()
+    print('''You decide to not trust the words of the giant. You tell him:
+"I am very sorry to hear that. Still, it is not a good excuse to kidnapp this
+poor little girl from her father back to the village. Now, if you will excuse
+us, have a good day." The start walking away, as the giant man waves goodbye
+to the girl. You descend down the giant beanstalk. After around a day of
+travel, you find your way back to Stillhollow and you reunite the little girl
+with her father. The man starts crying with happiness. He gives you a bag of
+gold to thank you for saving his daughter. Content with having done a good
+deed and surviving visiting the house of a giant, you venture off for more
+adventures. And they all lived happily ever after.
+YOU WON
+
+Run the application again to play more.''')
+    return None
+
+
 def story_stare_at_giant(name, player_class):
     '''
     Continues the story for a player who chose to stare at the giant
