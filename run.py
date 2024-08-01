@@ -590,7 +590,7 @@ couple of bumps that you could use to climb. You do so. You follow the
 bumps up one side of the gate. After reaching the top, you can see that
 behind the gate there is another set of stairs that go up even further
 towards another cloud. On top of there, you can see a small house.
-You climb the down to the other side of the gate. You take a sigh and start
+You climb down to the other side of the gate. You sigh and start
 climbing the stairs. After a while, you manage to get to the end of these
 stairs, and what seemed like a small house from afar, you now see a giant
 house in front of you, with green windows, red door and roof,
