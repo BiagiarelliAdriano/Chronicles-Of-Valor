@@ -1258,6 +1258,26 @@ What would you like to do?
         return 'story_run_towards_hallway'
 
 
+def story_fail_to_break_shackles(name, player_class, game_state):
+    '''
+    Continues the story for a player who chose to destroy the shackles
+    entrapping the little girl. Prompts the player with further choices and
+    returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You try with all your strength to pull the shackles. The little
+girl squicks in pain and you stop. This is not working.
+What would you like to do?
+1. Inspect the giant man for keys.
+2. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_inspect_giant_for_keys'
+    elif choice == 2:
+        return 'story_run_towards_hallway'
+
+
 def story_break_shackles(name, player_class, game_state):
     '''
     Ends the game for the user that tried to break the shackles of the little
@@ -1645,6 +1665,7 @@ story_segments = {
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
     'story_break_lock': story_break_lock,
+    'story_fail_to_break_shackles': story_fail_to_break_shackles,
     'story_break_shackles': story_break_shackles,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
     'story_search_middle_door': story_search_middle_door,
