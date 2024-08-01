@@ -75,7 +75,7 @@ def random_outcome(player_class, situation, default_negative_range=(1, 9),
     elif player_class == 'fighter' and situation == 'climbing':
         negative_range = (1, 6)
         positive_range = (7, 20)
-    elif scenario == 'charming':
+    elif situation == 'charming':
         if player_class == 'wizard':
             if random_number >= 13:
                 return 'negative'
