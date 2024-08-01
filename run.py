@@ -73,11 +73,11 @@ def random_outcome(player_class, situation, default_negative_range=(1, 9),
         negative_range = (1, 5)
         positive_range = (6, 20)
     elif player_class == 'fighter' and situation == 'climbing':
-        negative_range = (1, 7)
-        positive_range = (8, 20)
+        negative_range = (1, 6)
+        positive_range = (7, 20)
     elif player_class == 'wizard' and situation == 'charming':
-        negative_range == (1, 5)
-        positive_range == (6, 20)
+        negative_range == (1, 13)
+        positive_range == (14, 20)
     elif player_class == 'fighter' and situation == 'breaking':
         negative_range == (1, 5)
         positive_range == (6, 20)
@@ -371,17 +371,23 @@ anything.
 What would you like to do?
 1. Continue the climb.
 2. Wait for the following morning.''')
+
+    outcome = random_outcome(player_class, 'climbing')
+
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
-        return 'story_continue_climb'
+        if outcome == 'negative':
+            return 'story_failed_continue_climb'
+        else:
+            return 'story_success_continue_climb'
     elif choice == 2:
         return 'story_wait_for_morning'
 
 
-def story_continue_climb(name, player_class):
+def story_failed_continue_climb(name, player_class):
     '''
-    Ends the story for a player who chose to continue the climb of the
-    giant beanstalk during the night.
+    Ends the story for a player who chose to continue the climb and failed
+    to resist the strong currents of wind.
     '''
 
     clear_console()
@@ -392,6 +398,36 @@ grip, when a quick, strong current of wind picks up and pushes you away.
 You lose your grip and fall 1000ft to the ground.
 END OF GAME''')
     return None
+
+
+def story_success_continue_climb(name, player_class):
+    '''
+    Continues the story for a player who chose to continue the climb and
+    succeeded to resist the strong currents of wind. Prompts the player
+    with futher choices and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You persist on. You are not scared of some clouds and the darkness
+of the night. You continue with the same strategy to climb. Suddenly,
+you do not notice a change in direction of a branch. You almost lose your
+grip, when a quick, strong current of wind picks up and pushes you. You tighten
+your grip and dig your fingers deeper, tense up all your muscles to resist
+the cold. Fortunately, the current does not last that long, so thanks to your
+strength you managed to hold on and not fall. You continue climbing. Finally
+you reach the top of the beanstalk. You are very tired and should probably
+rest for a while. You do not see the sun of the morning yet, but what you can
+see is where you are now. You are on a big platform built in smooth stone on
+top of the beanstalk. You can see two sets of stairs going up the clouds.
+One has your size of steps, the other one has giant steps.
+What would you like to do?
+1. Take the stairs of your size.
+2. Take the giant stairs.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_climb_normal_stairs'
+    elif choice == 2:
+        return 'story_climb_giant_stairs'
 
 
 def story_wait_for_morning(name, player_class):
@@ -663,16 +699,17 @@ What would you like to do?
 
 def story_failed_to_hide(name, player_class):
     '''
-    Ends the game for the player who failed to hide next to the door from the giant.
+    Ends the game for the player who failed to hide next to the door from
+    the giant.
     '''
 
     clear_console()
     print('''You quickly escape and put your back to the side of the wall,
 right next to the door. You wait. The giant steps get nearer. The door
-starts to open, and you wait with your eyes close and holding your breath, hoping
-the giant will not see you or hear you. You wait for a bit, and when you open
-your eyes and look up, a see a giant angry face staring at you. The giant man then
-proceeds to stomp on you.
+starts to open, and you wait with your eyes close and holding your breath,
+hoping the giant will not see you or hear you. You wait for a bit, and when
+you open your eyes and look up, a see a giant angry face staring at you.
+The giant man then proceeds to stomp on you.
 END OF GAME''')
     return None
 
