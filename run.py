@@ -43,6 +43,7 @@ def get_valid_choice(prompt, valid_choices):
             if condition:
                 valid_choices.append(choice)
 
+    # Makes sure the program accepts only valid inputs
     while True:
         choice = input(prompt)
         if not choice.strip():
@@ -99,15 +100,6 @@ def random_outcome(player_class, game_state, situation,
             positive_range = (4, 20)
         else:
             return 'negative'
-    elif situation == 'inspecting':
-        if game_state.get('wizard_class_chosen', False):
-            negative_range = (1, 7)
-            positive_range = (8, 20)
-        else:
-            return 'negative'
-    elif player_class == 'rogue' and situation == 'stealth':
-        negative_range = (1, 5)
-        positive_range = (6, 20)
 
     # Determine outcome based on random number
     if negative_range[0] <= random_number <= negative_range[1]:
