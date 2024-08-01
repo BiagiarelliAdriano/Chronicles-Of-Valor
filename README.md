@@ -81,3 +81,7 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 	- Adding the `PORT`  `8000` to the config vars.
 	- Link the Heroku app to the repository.
 	- Click on **Deploy Branch**
+
+# Credits
+- Code Institute for the deployment terminal and the Python checker.
+- My mentor Alan Bushell who helped me conceptualize the project and helped me greatly throughout the development.
