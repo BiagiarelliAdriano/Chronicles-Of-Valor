@@ -17,3 +17,36 @@ The story is completely original made by myself, highly inspired by the story of
 The game offers unique choices based on the class the user chose and different options also have a random outcome to them, allowing for replayability for possible different outcomes to the story.
 
 The game has many endings, some that are bad and quickly available, some that let's the user win the game.
+
+# Features
+## Existing Features
+
+ - Text based input for the user's name.
+	 - The user is asked to input their name. The program will accept the input only if the user doesn't use any number and they write at least one character. If the input is invalid, an error message will appear, asking the user to input a valid name.
+
+![Program name input validation](https://i.ibb.co/88NBY7n/nameinput.png)
+![Program name input validation function in code](https://i.ibb.co/L6nmM6w/nameinputfunction.png)
+
+ - Number based inputs for the user's choices throughout the game.
+	 - The user will be asked to write the number of their choice. When trying to input blank, when trying to input a number above the number of choices and when trying to input letters, error messages will appear, telling the player their input is not valid, and to please input a valid one instead.
+
+![Program number input validation](https://i.ibb.co/37Xf7LK/numberinput.png)
+
+- Follow the story based on the user's choices.
+- Specific and unique options available only with certain classes.
+	- The program will take in consideration which class the user chose, and will provide unique choices only if the user took specific classes, using game states.
+
+![Program class unique options functions](https://i.ibb.co/J5Htn9D/classuniqueoptions.png)
+
+- Possible random outcomes with specific choices.
+	- Just like Dungeons & Dragons, some actions from the players will be hard to complete and might end in failing to do the desired action. That's why this program has a random outcome function for specific actions that might end up in a failure and possibly the end of the game for the user, or the user might succeed a be able to continue their adventure.
+	- Some of these random outcomes are also class specific, being that some classes might have some advantages in doing the desired action, so they have a wider range of success, and also some of the outcomes are for specific class only to succeed, while the other classes will always get the negative outcome, not having the skills to succeed on that desired action.
+
+![Program random outcome function](https://i.ibb.co/tHs4YPR/randomoutcomefunction.png)
+![Program random outcome function in action](https://i.ibb.co/6X5LqLh/randomoutcomefunctioninaction.png)
+
+## Future Features
+- Secret ending based on specific game states being unlocked by choosing specific choices throughout the game, hinting to a possible future story.
+- Expanding the endings of the story about the father of the little girl.
+- More unique choices for different classes.
+- More complicated inputs asked to the user, for example puzzles and riddles, probably implemented in the possible secret ending.
