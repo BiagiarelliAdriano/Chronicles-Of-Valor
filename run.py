@@ -1215,7 +1215,8 @@ What would you like to do?
         valid_choices.append(5)
 
     outcome = random_outcome(player_class, game_state, 'breaking')
-    lock_pick_outcome = random_outcome(player_class, game_state, 'lock picking')
+    lock_pick_outcome = random_outcome(player_class, game_state,
+                                       'lock picking')
 
     choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
@@ -1237,7 +1238,24 @@ What would you like to do?
 
 
 def story_failed_lock_pick(name, player_class, game_state):
-    return None
+    '''
+    Continues the story for a player who chose to try and open the lock by
+    picking it but failing to do so. Prompts the player with further choices
+    and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print('''You take out your lock picking tools and you starting working.
+You are very close to succeed, when your tool breaks. Cursing, you look around,
+the giant man is still sleeping.
+What would you like to do?
+1. Inspect the giant man for keys.
+2. Run towards the hallway.''')
+    choice = get_valid_choice(PROMPT, [1, 2])
+    if choice == 1:
+        return 'story_inspect_giant_for_keys'
+    elif choice == 2:
+        return 'story_run_towards_hallway'
 
 
 def story_successful_lock_pick(name, player_class, game_state):
