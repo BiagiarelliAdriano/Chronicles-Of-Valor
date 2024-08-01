@@ -379,7 +379,7 @@ What would you like to do?
 1. Continue the climb.
 2. Wait for the following morning.''')
 
-    outcome = random_outcome(player_class, 'climbing', game_state)
+    outcome = random_outcome(player_class, game_state, 'climbing')
 
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
@@ -647,7 +647,7 @@ What would you like to do?
 1. Hide next to the door.
 2. Wait until the door opens.''')
 
-    outcome = random_outcome(player_class, 'hiding', game_state)
+    outcome = random_outcome(player_class, game_state, 'hiding')
 
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
