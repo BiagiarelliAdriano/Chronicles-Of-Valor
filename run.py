@@ -56,7 +56,8 @@ def get_valid_choice(prompt, valid_choices):
             return int(choice)
 
 
-def random_outcome(player_class, game_state, situation, default_negative_range=(1, 9),
+def random_outcome(player_class, game_state, situation,
+                   default_negative_range=(1, 9),
                    default_positive_range=(10, 20)):
     '''
     Generates a random outcome based on the player's class and situation.
@@ -1227,15 +1228,17 @@ What would you like to do?
 
 def story_break_lock(name, player_class, game_state):
     '''
-    Continues the story for a player who chose to destroy the lock of the iron cage
-    where the little girl is kept. Prompts the player with further choices and
-    returns the next segment of the story.
+    Continues the story for a player who chose to destroy the lock of the
+    iron cage where the little girl is kept. Prompts the player with further
+    choices and returns the next segment of the story.
     '''
 
     clear_console()
-    print('''Thanks to your herculean strenght, you are able to grab onto the lock, pull it open and completely break it. After that, you can simply open the cage.
-You get closer to the girl, who just looks at you with a worried expression. You reassure her, but you notice that she is also being kept with some shackles on her hands.
-They also have a place for a key in them.
+    print('''Thanks to your herculean strenght, you are able to grab onto the
+lock, pull it open and completely break it. After that, you can simply open the
+cage. You get closer to the girl, who just looks at you with a worried
+expression. You reassure her, but you notice that she is also being kept with
+some shackles on her hands. They also have a place for a key in them.
 What would you like to do?
 1. Break the shackles.
 2. Inspect the giant man for keys.
@@ -1253,6 +1256,27 @@ What would you like to do?
         return 'story_inspect_giant_for_keys'
     elif choice == 3:
         return 'story_run_towards_hallway'
+
+
+def story_break_shackles(name, player_class, game_state):
+    '''
+    Ends the game for the user that tried to break the shackles of the little
+    girl inside the iron cage.
+    '''
+
+    clear_console()
+    print('''Nothing can stop you and your strength. You manage to destroy the
+shackles entrapping the little girl without harming her. You take her by
+a hand, and you escape the giant house together. After around a day of travel,
+you find your way back to Stillhollow and you reunite the little girl with her
+father. The man starts crying with happiness. He gives you a bag of gold to
+thank you for saving his daughter. Content with having done a good deed and
+surviving visiting the house of a giant, you venture off for more adventures.
+And they all lived happily ever after.
+YOU WON
+
+Run the application again to play more.''')
+    return None
 
 
 def story_run_towards_cage(name, player_class, game_state):
@@ -1621,6 +1645,7 @@ story_segments = {
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
     'story_break_lock': story_break_lock,
+    'story_break_shackles': story_break_shackles,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
     'story_search_middle_door': story_search_middle_door,
     'story_grab_keys': story_grab_keys,
@@ -1636,7 +1661,8 @@ def main():
     player_class = choose_class(name)
     current_story = story_start(name, player_class, game_state)
     while current_story:
-        current_story = story_segments[current_story](name, player_class, game_state)
+        current_story = story_segments[current_story](name, player_class,
+                                                      game_state)
 
 
 if __name__ == '__main__':
