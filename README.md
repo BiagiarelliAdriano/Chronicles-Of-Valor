@@ -56,3 +56,18 @@ I have manually tested this project by doing the following:
 - Tested in my local terminal and the Code Institute Heroku terminal.
 - More unique choices for different classes.
 - More complicated inputs asked to the user, for example puzzles and riddles, probably implemented in the possible secret ending.
+
+# Bugs
+**Solved Bugs**
+- When I first introduced game states to the code, I created the variable conditional_choices, but never defined. I fixed this by adding `conditional_choices = []` to the global variables.
+
+![Program random outcome function](assets/images/afteraddinggamestatesconditionalchoicesnotdefined.png)
+
+- When I first checked my code through the CI Python Linter, it was full of trailing white spaces, under-indented continuation lines and lines that were too long for the code. I fixed all of these problems by rewriting my entire code multiple times.
+
+**Remaining Bugs**
+- No bugs remaining.
+
+**Validator Testing**
+- CI Python Linter
+	- After going through the entire code and fixing every encounter problem, no following errors were returned from the [PEP8 Python Checker](https://pep8ci.herokuapp.com/).
