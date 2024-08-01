@@ -21,7 +21,7 @@ def clear_console():
     '''
     Clears the console screen to ensure the new part of the story replaces
     the previous one. Works for both Windows (using 'cls') and Unix-based
-         systems (using 'clear').
+    systems (using 'clear').
     '''
     if os.name == 'nt':
         _ = os.system('cls')
@@ -113,6 +113,7 @@ def introduction():
     Introduces the player to the game and prompts them to input their name.
     Returns the player's name.
     '''
+    
     print('''Welcome to the Chronicles of Valor!
 Chronicles of Valor is a text based adventure game where YOU decide
 your destiny! You will venture forth into Cydoia, a flourishing continent
