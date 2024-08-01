@@ -957,6 +957,36 @@ What would you like to do?
         return 'story_take_girl_leave'
 
 
+def story_sympathize_with_giant(name, player_class):
+    '''
+    Ends the game for the user who chose to sympathize with the giant
+    after knowing the truth.
+    '''
+
+    clear_console()
+    print('''Hearing the giant man story, you look towards the little girl
+She seems confused and a bit scared. You ask her: "Is that the truth? Back to
+the village, a man, who I thought was your father, asked me to rescue you."
+The little girl points to her mouth, opens it without making a sound, and
+shakes her head. The giant responds: "She is mute." Finding this interesting,
+you are able to cast Detect Thoughts on the girl to know what she is thinking,
+and maybe get an answer for you. You immediately hear the feeble voice of the
+girl saying: "I do not know my father. I never met him." Understanding the
+situation, you ask the little girl: "Would you like to stay with Mr. Giant?"
+The little girl nods. You turn to the giant: "You are not going to eat her,
+right?" "No, giants do not actually eat humans, you guys have too few calories,
+it is not worth it." Knowing their not lying and thinking back to the man that
+asked for you help, you decide to leave the little girl with the giant. After
+saying goodbye to both and reassuring the girl to be safe, you decide it is
+also not worth going back to the village to talk to that weird man, thinking
+they were the father of the girl. After travelling back down the giant
+beanstalk, you continue your adventures in the continent of Cydoia.
+YOU WON.
+
+Run the application again to play more.''')
+    return None
+
+
 def story_stare_at_giant(name, player_class):
     '''
     Continues the story for a player who chose to stare at the giant
