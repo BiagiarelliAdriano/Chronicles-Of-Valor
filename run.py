@@ -1210,7 +1210,12 @@ What would you like to do?
         print('4. Open the cage with the keys.')
         valid_choices.append(4)
 
+    if game_state.get('rogue_class_chosen', False):
+        print('5. Try to pick the lock open.')
+        valid_choices.append(5)
+
     outcome = random_outcome(player_class, game_state, 'breaking')
+    lock_pick_outcome = random_outcome(player_class, game_state, 'lock picking')
 
     choice = get_valid_choice(PROMPT, valid_choices)
     if choice == 1:
@@ -1224,6 +1229,19 @@ What would you like to do?
         return 'story_run_towards_hallway'
     elif choice == 4:
         return 'story_open_cage_with_keys'
+    elif choice == 5:
+        if lock_pick_outcome == 'negative':
+            return 'story_failed_lock_pick'
+        else:
+            return 'story_successful_lock_pick'
+
+
+def story_failed_lock_pick(name, player_class, game_state):
+    return None
+
+
+def story_successful_lock_pick(name, player_class, game_state):
+    return None
 
 
 def story_break_lock(name, player_class, game_state):
@@ -1665,6 +1683,8 @@ story_segments = {
     'story_search_anything_useful': story_search_anything_useful,
     'story_try_force_lock': story_try_force_lock,
     'story_break_lock': story_break_lock,
+    'story_failed_lock_pick': story_failed_lock_pick,
+    'story_successful_lock_pick': story_successful_lock_pick,
     'story_fail_to_break_shackles': story_fail_to_break_shackles,
     'story_break_shackles': story_break_shackles,
     'story_inspect_giant_for_keys': story_inspect_giant_for_keys,
