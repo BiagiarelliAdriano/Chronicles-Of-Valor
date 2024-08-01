@@ -75,7 +75,14 @@ def random_outcome(player_class, situation, default_negative_range=(1, 9),
     elif player_class == 'fighter' and situation == 'climbing':
         negative_range = (1, 6)
         positive_range = (7, 20)
-    elif player_class == 'wizard' and situation == 'charming':
+    elif scenario == 'charming':
+        if player_class == 'wizard':
+            if random_number >= 13:
+                return 'negative'
+            else:
+                return 'positive'
+        else:
+            return 'negative'
         negative_range == (1, 13)
         positive_range == (14, 20)
     elif player_class == 'fighter' and situation == 'breaking':
@@ -730,11 +737,17 @@ always playing pranks on me."
 What would you like to do?
 1. Enter the house without being noticed.
 2. Confront the giant.''')
+
+    outcome = random_outcome(player_class, 'charming')
+
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
         return 'story_enter_house_without_notice'
     elif choice == 2:
-        return 'story_confront_giant'
+        if outcome == 'negative':
+            return 'story_confront_giant'
+        else:
+            return 'story_charm_giant'
 
 
 def story_wait_for_door_open(name, player_class):
@@ -755,11 +768,17 @@ What would you like to do?
 1. Stare at the giant without saying a word.
 2. Confront the giant.
 3. Enter the house without being noticed.''')
+
+    outcome = random_outcome(player_class, 'charming')
+
     choice = get_valid_choice(PROMPT, [1, 2, 3])
     if choice == 1:
         return 'story_stare_at_giant'
     elif choice == 2:
-        return 'story_confront_giant'
+        if outcome == 'negative':
+            return 'story_confront_giant'
+        else:
+            return 'story_charm_giant'
     elif choice == 3:
         return 'story_enter_house_without_notice'
 
@@ -898,10 +917,50 @@ END OF GAME''')
     return None
 
 
+def story_charm_giant(name, player_class):
+    '''
+    Continues the story for a player who chose to, being a Wizard, try
+    and cast Charm Person on the giant man. Prompts the player with further
+    choices and returns the next segment of the story.
+    '''
+
+    clear_console()
+    print(f'''You calmly confront the giant: "Hello there, Mr. Giant.
+I am {name}, an adventurer that came to know the request of a poor man."
+While you talk, you get closer to the giant. The giant does not seem to be
+much interested in what you have to say, but for now he does not do anything
+aggressive towards you. You continue "Now, you see, this poor man asked me to
+come visit you, because it appears you decided to take his only daughter as
+hostage. Now, I do not know the motivations behind your choice, but you appear
+to be a valorous giant warrior, but I have to say. Kidnapping is not that
+valorous." After you finish saying this, you get to the giant man foot and you
+touch it. A small, pink cloud of energy generates from your hand as you cast
+Charm Person. You start backing up, waiting for the effect of the spell to
+take place. The giant man expression seems to change. He says: "You know what?
+You are right. Hold on." He then closes the door. You hear footsteps, clinging
+of iron, a little girl scream, and then more footsteps. The door opens up
+again. The giant man, holding something now, places in front of you a small
+girl. He then says: "I am very sorry. Yesterday night I was just wandering
+about the base of the beanstal and I saw that man looking very suspicious
+around this girl, so I wanted to take her and maybe save her. You know, it is
+been a while, but I too had a daughter."
+What would you like to do?
+1. Sympathize with the giant and let the little girl go.
+2. Take the girl, excuse yourself, and leave.
+3. Take the girl and run.''')
+    choice = get_valid_choice(PROMPT, [1, 2, 3])
+    if choice == 1:
+        return 'story_sympathize_with_giant'
+    elif choice == 2:
+        return 'story_take_girl_excuse_leave'
+    elif choice == 3:
+        return 'story_take_girl_leave'
+
+
 def story_stare_at_giant(name, player_class):
     '''
     Continues the story for a player who chose to stare at the giant
-    that opened the door.Prompts the player with further choices and
+    that opened the door. Prompts the player with further choices and
     returns the next segment of the story.
     '''
 
@@ -1401,7 +1460,8 @@ story_segments = {
     'story_wizard_tiny_hut': story_wizard_tiny_hut,
     'story_climb_normal_stairs': story_climb_normal_stairs,
     'story_climb_giant_stairs': story_climb_giant_stairs,
-    'story_continue_climb': story_continue_climb,
+    'story_failed_continue_climb': story_failed_continue_climb,
+    'story_success_continue_climb': story_success_continue_climb,
     'story_wait_for_morning': story_wait_for_morning,
     'story_open_gate': story_open_gate,
     'story_call_out': story_call_out,
@@ -1419,6 +1479,10 @@ story_segments = {
     'story_go_back_to_front': story_go_back_to_front,
     'story_enter_house_without_notice': story_enter_house_without_notice,
     'story_confront_giant': story_confront_giant,
+    'story_charm_giant': story_charm_giant,
+    'story_sympathize_with_giant': story_sympathize_with_giant,
+    'story_take_girl_excuse_leave': story_take_girl_excuse_leave,
+    'story_take_girl_leave': story_take_girl_leave,
     'story_stare_at_giant': story_stare_at_giant,
     'story_climb_down': story_climb_down,
     'story_exit_window': story_exit_window,
