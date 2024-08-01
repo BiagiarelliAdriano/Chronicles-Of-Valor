@@ -1045,9 +1045,15 @@ He goes to close the door again.
 What would you like to do?
 1. Confront the giant.
 2. Enter the house without being noticed.''')
+
+    outcome = random_outcome(player_class, game_state, 'charming')
+
     choice = get_valid_choice(PROMPT, [1, 2])
     if choice == 1:
-        return 'story_confront_giant'
+        if outcome == 'negative':
+            return 'story_confront_giant'
+        else:
+            return 'story_charm_giant'
     elif choice == 2:
         return 'story_enter_house_without_notice'
 
