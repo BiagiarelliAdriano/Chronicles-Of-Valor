@@ -17,6 +17,10 @@ Once I decided on this concept I started to work out my flow and used Lucid Char
 > Please see the below flow chart to better understand the initial design and concept.
 ![Initial project design flow chart](assets/images/lucidchartflowchart.png)
 
+I have also created a Google Document with the initial script of the adventure for this version of the game.
+
+[Link to the Google Document](https://docs.google.com/document/d/1PRuCeH-fXFBYQpO2VxEh2AshHzcQZ-WiEE9tP8F1Om8/edit?usp=sharing)
+
 ## Pre-Planning Structure
 **Structure**
 - Introduction to game and world.
