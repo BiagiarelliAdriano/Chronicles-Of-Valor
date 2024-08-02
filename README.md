@@ -7,6 +7,29 @@ Users can explore the world of Cydoia in this Jack and the Beanstalk inspired ad
 
 ![View the program in different screen sizes](assets/images/programindifferentscreens.png)
 
+# Flow
+## Pre-project Planning
+
+> For project 3 I decided I wanted to make a text-based adventure game where the user can decide where the story goes depending on the choices they want to make.
+
+Once I decided on this concept I started to work out my flow and used Lucid Chart to create an easy to follow process. I wanted to create this early on so I can understand the logic needed to complete the project and in what order I should approach it from.
+
+> Please see the below flow chart to better understand the initial design and concept.
+![Initial project design flow chart](assets/images/lucidchartflowchart.png)
+
+## Pre-Planning Structure
+**Structure**
+- Introduction to game and world.
+	- User is asked to input their name to begin the story.
+- Introduction to different classes to determine certain outcomes and unique choices determined by class choice.
+	- User will be asked to input a number between 1 and 3 to choose the desired class.
+- The story will begin with a special introduction determined by the chosen class.
+	- The user will be asked to input a number between 1 and the number of possible choices in that moment of the story.
+- The story will adapt to the user choice and continue on accordingly.
+- Some choices may be available only if a certain class was chosen.
+- Some choices may also have random possible outcomes, determined by a randomly generated number between 1 and 20 and two ranges of numbers. The standard negative outcome range is between 1 and 9, the standard positive outcome range is between 10 and 20.
+- The story has many different endings. Some will end the story abruptly, signifying the fact that the user just lost the game. There is a standard good ending and three different good endings, unique to all the different class and only available to that determined class.
+
 # How to play
 Chonicles of Valor is based on the classic 80s text-based games, and it introduces the flourishing continent of Cydoia, rich of adventures.
 
