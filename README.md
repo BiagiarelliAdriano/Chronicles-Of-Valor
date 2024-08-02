@@ -132,6 +132,7 @@ I have manually tested this project by doing the following:
 **Validator Testing**
 - CI Python Linter
 	- After going through the entire code and fixing every encounter problem, no following errors were returned from the [PEP8 Python Checker](https://pep8ci.herokuapp.com/).
+ ![CI Python Linter validator](assets/images/cipythonlintervalidator.png)
 
 # Deployment
 This project was deployed using Code Institute's mock terminal for Heroku.
