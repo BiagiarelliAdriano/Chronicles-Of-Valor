@@ -72,6 +72,44 @@ The game has many endings, some that are bad and quickly available, some that le
 - Secret ending based on specific game states being unlocked by choosing specific choices throughout the game, hinting to a possible future story.
 - Expanding the endings of the story about the father of the little girl.
 
+# Technology Used
+
+**Python**
+
+Used to create the application.
+
+**Heroku**
+
+Used to deploy and host the application.
+
+**Github**
+
+Used to store the code.
+
+**Codeinstitute-ide**
+
+IDE used for creating the application.
+
+**Git**
+
+Used for version control.
+
+**Krita**
+
+Creating custom images for Readmemd
+
+**CI Python Linter**
+
+Python checker provided directly by Code Institute
+
+**Lucid Chart**
+
+Used to create flow chart for initial project design.
+
+**ChatGPT**
+
+Used to get immediate feedback and help for specific problems.
+
 # Testing
 I have manually tested this project by doing the following:
 - Passed the code through the CI Python Linter Checker provided by Code Institute and confirmed there are no problems.
